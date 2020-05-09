@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>queryResult</title>
+    <style type="text/css">
+        table.imagetable {
+            font-family: verdana,arial,sans-serif;
+            font-size:20px;
+            color:#333333;
+            border-width: 10px;
+            border-color: #999999;
+            border-collapse: collapse;
+            margin-left: 30px;
+        }
+        table.imagetable th {
+            background:#b5cfd2;
+            border-width: 2px;
+            padding: 30px;
+            border-style: solid;
+            border-color: #999999;
+        }
+        table.imagetable td {
+            background:#dcddc0;
+            border-width: 2px;
+            padding: 30px;
+            border-style: solid;
+            border-color: #999999;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<h1 style="text-align: center">车票查询结果</h1>
+<table class="imagetable" cellpadding="0" cellspacing="0" >
+    <thead>
+    <th>列车次号</th>
+    <th>出发站点</th>
+    <th>目的站点</th>
+    <th>出发时间</th>
+    <th>到达时间</th>
+    <th>其他备注</th>
+    <th>点击购买</th>
+    </thead>
+    <tbody>
+    <tr th:each="section : ${#httpSession.getAttribute('queryList')}">
+        <td th:text="${section.getSectionId()}"></td>
+        <td th:text="${section.getStartSection()}"></td>
+        <td th:text="${section.getEndSection()}"></td>
+        <td th:text="${section.getStartTime()}"></td>
+        <td th:text="${section.getEndTime()}"></td>
+        <td></td>
+        <td><a th:href="@{'/orders/preorder.do?sectionId='+${section.getSectionId()}}">购买</a> </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bootdemo.dao.TicketTypeMapper">
+
+    <select id="selectTicketType" resultType="com.bootdemo.domain.TicketType">
+        SELECT * FROM ticket_type WHERE typeId = #{typeId}
+    </select>
+
+    <insert id="insertTicketType" useGeneratedKeys="true" keyProperty="typeId">
+        INSERT INTO ticket_type(sectionId,seatGrade,price,compartmentNum,allSeatNum)
+        VALUES (#{sectionId},#{seatGrade},#{price},#{compartmentNum},#{allSeatNum})
+    </insert>
+
+    <select id="selectSectionId" resultType="java.lang.Integer">
+        SELECT sectionId FROM ticket_type WHERE typeId = #{typeId}
+    </select>
+
+    <select id="selectPrice" resultType="java.math.BigDecimal">
+        SELECT price FROM ticket_type WHERE typeId = #{typeId}
+    </select>
+
+    <select id="selectSeatNumber" resultType="java.lang.Integer">
+        SELECT allSeatNum FROM ticket_type WHERE typeId = #{typeId}
+    </select>
+
+    <select id="selectTypeIdListBySectionId" resultType="java.lang.Integer">
+        SELECT typeId FROM ticket_type WHERE sectionId = #{sectionId} ORDER BY typeId
+    </select>
+
+    <insert id="insertTrainTicketTypeByList">
+        INSERT INTO ticket_type(sectionId,seatGrade,price,compartmentNum,allSeatNum) VALUES
+        <foreach collection ="ticketTypeList" item="type"  index= "index"  separator="," >
+            (#{type.sectionId},#{type.seatGrade},#{type.price},#{type.compartmentNum},#{type.allSeatNum})
+        </foreach >
+    </insert>
+
+    <update id="updateTypeForDecrByList"  parameterType="java.util.List">
+        UPDATE ticket_type
+        <set>
+            allSeatNum=allSeatNum-1
+        </set>
+        WHERE typeId IN
+        <foreach collection="typeIdList" item="item" index="index" open="(" close=")" separator=",">
+            ${item}
+        </foreach>
+    </update>
+
+</mapper>

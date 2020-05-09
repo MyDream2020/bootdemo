@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="/bootdemo/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+                alert("yes");
+                $.ajax({
+                    type: "POST",
+                    url: "/bootdemo/remoteVerification",
+                    async: false,
+                    data: {
+                        "phoneNumber": "15622240665"
+                    },
+                    success: function (msg) {
+                        if (msg) {//根据返回值进行跳转
+                            alert(msg)
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button type="button" id="btnSubmit" class="button button-submit">提交</button>
+</body>
+</html>

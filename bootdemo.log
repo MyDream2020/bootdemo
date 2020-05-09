@@ -1,0 +1,656 @@
+2020-05-09 13:33:42.973  INFO 15564 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 15564 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 13:33:42.991  INFO 15564 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 13:33:44.423  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:33:44.429  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 13:33:44.495  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 0 JPA repository interfaces.
+2020-05-09 13:33:44.526  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:33:44.529  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 13:33:44.554  INFO 15564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-05-09 13:33:46.642  INFO 15564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 13:33:46.656  INFO 15564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 13:33:46.657  INFO 15564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 13:33:46.925  INFO 15564 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 13:33:46.925 DEBUG 15564 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 13:33:46.926  INFO 15564 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3818 ms
+2020-05-09 13:33:47.173  INFO 15564 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 13:33:57.579  INFO 15564 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 13:33:57.812  INFO 15564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 13:33:58.047  INFO 15564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 13:33:58.364  INFO 15564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 13:33:58.654  INFO 15564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 13:33:59.229  INFO 15564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 13:33:59.271  INFO 15564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 13:34:01.299  INFO 15564 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 13:34:01.381 DEBUG 15564 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 13:34:01.634 DEBUG 15564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 13:34:01.640  INFO 15564 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 13:34:01.707 DEBUG 15564 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 13:34:01.726 DEBUG 15564 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 13:34:02.440  INFO 15564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 13:34:02.460  INFO 15564 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 20.489 seconds (JVM running for 23.011)
+2020-05-09 13:34:05.213  INFO 15564 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 13:34:05.214  INFO 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 13:34:05.214 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-05-09 13:34:05.225 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-09 13:34:05.225  INFO 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-09 13:34:05.587 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/login/login.html", parameters={}
+2020-05-09 13:34:05.603 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:34:05.685 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:34:07.349 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:34:07.354 DEBUG 15564 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:34:07.755 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:34:08.120 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:34:09.689 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/index.html", parameters={}
+2020-05-09 13:34:09.690 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:34:09.692 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:34:09.751 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/css/calendar.css", parameters={}
+2020-05-09 13:34:09.753 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:34:10.348 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:34:17.079 DEBUG 15564 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/query/query.do", parameters={masked}
+2020-05-09 13:34:17.080 DEBUG 15564 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.QueryController#doQuery(String, String, String)
+2020-05-09 13:34:17.237 DEBUG 15564 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:34:17.273 DEBUG 15564 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:34:18.531 DEBUG 15564 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/orders/preorder.do?sectionId=10001", parameters={masked}
+2020-05-09 13:34:18.531 DEBUG 15564 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPreOrders(Integer, Model)
+2020-05-09 13:34:18.906  INFO 15564 --- [http-nio-8080-exec-7] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-05-09 13:34:18.909  INFO 15564 --- [http-nio-8080-exec-7] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-05-09 13:34:20.450 DEBUG 15564 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:34:20.497 DEBUG 15564 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:34:37.394 DEBUG 15564 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/generate.do", parameters={masked}
+2020-05-09 13:34:37.394 DEBUG 15564 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doMakeOrders(TemporaryOrders, Model)
+2020-05-09 13:34:38.076 DEBUG 15564 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:34:38.114 DEBUG 15564 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:34:39.416 DEBUG 15564 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:34:39.416 DEBUG 15564 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:34:40.383 DEBUG 15564 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:34:40.384 DEBUG 15564 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing ["success"]
+2020-05-09 13:34:40.385 DEBUG 15564 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:35:57.489 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/", parameters={}
+2020-05-09 13:35:57.492 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:35:57.492 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
+2020-05-09 13:35:57.496 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2020-05-09 13:35:57.499 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/bootdemo/index.html", parameters={}
+2020-05-09 13:35:57.500 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:35:57.502 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 304
+2020-05-09 13:35:57.503 DEBUG 15564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:00.918 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/", parameters={}
+2020-05-09 13:36:00.918 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:36:00.919 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
+2020-05-09 13:36:00.919 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2020-05-09 13:36:00.919 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/bootdemo/index.html", parameters={}
+2020-05-09 13:36:00.920 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:36:00.921 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 304
+2020-05-09 13:36:00.922 DEBUG 15564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:00.948 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/css/calendar.css", parameters={}
+2020-05-09 13:36:00.950 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:36:00.950 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 13:36:00.954 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:36:00.955 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:00.957 DEBUG 15564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:00.957 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/img/train.jpeg", parameters={}
+2020-05-09 13:36:00.959 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:36:00.957 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/calendar.js", parameters={}
+2020-05-09 13:36:00.960 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 13:36:00.961 DEBUG 15564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:00.965 DEBUG 15564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 13:36:52.447 DEBUG 15564 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:36:52.447 DEBUG 15564 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:36:52.916 DEBUG 15564 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:36:52.917 DEBUG 15564 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing ["success"]
+2020-05-09 13:36:52.918 DEBUG 15564 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:37:41.095  INFO 7420 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 7420 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 13:37:41.099  INFO 7420 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 13:37:42.520  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:37:42.521  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 13:37:42.560  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 JPA repository interfaces.
+2020-05-09 13:37:42.584  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:37:42.585  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 13:37:42.604  INFO 7420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-05-09 13:37:44.078  INFO 7420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 13:37:44.094  INFO 7420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 13:37:44.095  INFO 7420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 13:37:44.371  INFO 7420 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 13:37:44.371 DEBUG 7420 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 13:37:44.372  INFO 7420 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3214 ms
+2020-05-09 13:37:44.487  INFO 7420 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 13:37:47.461  INFO 7420 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 13:37:47.540  INFO 7420 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 13:37:47.615  INFO 7420 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 13:37:47.769  INFO 7420 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 13:37:47.908  INFO 7420 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 13:37:48.131  INFO 7420 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 13:37:48.144  INFO 7420 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 13:37:49.007  INFO 7420 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 13:37:49.019 DEBUG 7420 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 13:37:49.078 DEBUG 7420 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 13:37:49.082  INFO 7420 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 13:37:49.102 DEBUG 7420 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 13:37:49.112 DEBUG 7420 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 13:37:49.363  INFO 7420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 13:37:49.366  INFO 7420 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 8.961 seconds (JVM running for 10.491)
+2020-05-09 13:37:52.761  INFO 7420 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 13:37:52.762  INFO 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 13:37:52.762 DEBUG 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-05-09 13:37:52.770 DEBUG 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-09 13:37:52.770  INFO 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-05-09 13:37:52.782 DEBUG 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:37:52.786 DEBUG 7420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:37:52.918 DEBUG 7420 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:37:53.202 DEBUG 7420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:01.506 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/query/query.do", parameters={masked}
+2020-05-09 13:38:01.507 DEBUG 7420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.QueryController#doQuery(String, String, String)
+2020-05-09 13:38:01.556 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:38:01.578 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:02.647 DEBUG 7420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/orders/preorder.do?sectionId=10001", parameters={masked}
+2020-05-09 13:38:02.647 DEBUG 7420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPreOrders(Integer, Model)
+2020-05-09 13:38:03.036  INFO 7420 --- [http-nio-8080-exec-3] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-05-09 13:38:03.038  INFO 7420 --- [http-nio-8080-exec-3] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-05-09 13:38:04.189 DEBUG 7420 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:38:04.207 DEBUG 7420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:07.504 DEBUG 7420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/generate.do", parameters={masked}
+2020-05-09 13:38:07.506 DEBUG 7420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doMakeOrders(TemporaryOrders, Model)
+2020-05-09 13:38:07.742 DEBUG 7420 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:38:07.767 DEBUG 7420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:08.789 DEBUG 7420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:38:08.789 DEBUG 7420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:38:08.931 DEBUG 7420 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:38:08.932 DEBUG 7420 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["支付失败！余票不足！"]
+2020-05-09 13:38:08.935 DEBUG 7420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:40.657 DEBUG 7420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/generate.do", parameters={masked}
+2020-05-09 13:38:40.658 DEBUG 7420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doMakeOrders(TemporaryOrders, Model)
+2020-05-09 13:38:40.820 DEBUG 7420 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:38:40.829 DEBUG 7420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:41.809 DEBUG 7420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:38:41.810 DEBUG 7420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:38:42.125 DEBUG 7420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:38:42.125 DEBUG 7420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing ["支付失败！余票不足！"]
+2020-05-09 13:38:42.126 DEBUG 7420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:38:53.582 DEBUG 7420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:38:53.583 DEBUG 7420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:38:53.888 DEBUG 7420 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:38:53.888 DEBUG 7420 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing ["支付失败！余票不足！"]
+2020-05-09 13:38:53.890 DEBUG 7420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:44:47.149 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/generate.do", parameters={masked}
+2020-05-09 13:44:47.150 DEBUG 7420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doMakeOrders(TemporaryOrders, Model)
+2020-05-09 13:44:49.350 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:44:49.358 DEBUG 7420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:44:50.656 DEBUG 7420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/orders/pay.do", parameters={masked}
+2020-05-09 13:44:50.657 DEBUG 7420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.OrderController#doPayment(String)
+2020-05-09 13:44:51.070 DEBUG 7420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-05-09 13:44:51.071 DEBUG 7420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["success"]
+2020-05-09 13:44:51.071 DEBUG 7420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:46:32.688  INFO 8048 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 8048 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 13:46:32.693  INFO 8048 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 13:46:34.407  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:46:34.407  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 13:46:34.444  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 JPA repository interfaces.
+2020-05-09 13:46:34.473  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:46:34.476  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 13:46:34.508  INFO 8048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-05-09 13:46:35.503  INFO 8048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 13:46:35.518  INFO 8048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 13:46:35.519  INFO 8048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 13:46:35.753  INFO 8048 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 13:46:35.754 DEBUG 8048 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 13:46:35.754  INFO 8048 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2966 ms
+2020-05-09 13:46:35.876  INFO 8048 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 13:46:38.893  INFO 8048 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 13:46:39.001  INFO 8048 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 13:46:39.110  INFO 8048 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 13:46:39.262  INFO 8048 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 13:46:39.423  INFO 8048 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 13:46:39.608  INFO 8048 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 13:46:39.619  INFO 8048 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 13:46:40.337  INFO 8048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 13:46:40.350 DEBUG 8048 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 13:46:40.413 DEBUG 8048 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 13:46:40.418  INFO 8048 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 13:46:40.447 DEBUG 8048 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 13:46:40.461 DEBUG 8048 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 13:46:40.721  INFO 8048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 13:46:40.725  INFO 8048 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 8.779 seconds (JVM running for 10.326)
+2020-05-09 13:54:11.945  INFO 12564 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 12564 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 13:54:11.951  INFO 12564 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 13:54:14.148  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:54:14.149  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 13:54:14.213  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 0 JPA repository interfaces.
+2020-05-09 13:54:14.270  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 13:54:14.272  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 13:54:14.305  INFO 12564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
+2020-05-09 13:54:15.513  INFO 12564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 13:54:15.524  INFO 12564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 13:54:15.525  INFO 12564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 13:54:15.729  INFO 12564 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 13:54:15.730 DEBUG 12564 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 13:54:15.731  INFO 12564 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3691 ms
+2020-05-09 13:54:15.865  INFO 12564 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 13:54:18.666  INFO 12564 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 13:54:18.841  INFO 12564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 13:54:19.010  INFO 12564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 13:54:19.323  INFO 12564 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 13:54:19.494  INFO 12564 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 13:54:19.697  INFO 12564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 13:54:19.708  INFO 12564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 13:54:20.512  INFO 12564 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 13:54:20.528 DEBUG 12564 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 13:54:20.598 DEBUG 12564 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 13:54:20.600  INFO 12564 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 13:54:20.621 DEBUG 12564 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 13:54:20.630 DEBUG 12564 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 13:54:20.892  INFO 12564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 13:54:20.894  INFO 12564 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 9.561 seconds (JVM running for 10.893)
+2020-05-09 13:56:27.619  INFO 12564 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 13:56:27.620  INFO 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 13:56:27.620 DEBUG 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-05-09 13:56:27.628 DEBUG 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-09 13:56:27.628  INFO 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-05-09 13:56:27.650 DEBUG 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:56:27.659 DEBUG 12564 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:56:27.858 DEBUG 12564 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:56:28.171 DEBUG 12564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:56:44.193 DEBUG 12564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:56:44.194 DEBUG 12564 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:56:44.236 DEBUG 12564 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:56:44.239 DEBUG 12564 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:56:52.323 DEBUG 12564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:56:52.323 DEBUG 12564 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:56:52.365 DEBUG 12564 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:56:52.369 DEBUG 12564 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:56:54.328 DEBUG 12564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:56:54.328 DEBUG 12564 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:56:54.579 DEBUG 12564 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:56:54.585 DEBUG 12564 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 13:56:56.559 DEBUG 12564 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 13:56:56.560 DEBUG 12564 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 13:56:56.602 DEBUG 12564 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 13:56:56.605 DEBUG 12564 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:02:58.508  INFO 9248 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 9248 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 14:02:58.511  INFO 9248 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 14:02:59.932  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 14:02:59.932  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 14:02:59.966  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
+2020-05-09 14:02:59.988  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 14:02:59.989  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 14:03:00.007  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-05-09 14:03:01.178  INFO 9248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 14:03:01.191  INFO 9248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 14:03:01.191  INFO 9248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 14:03:01.396  INFO 9248 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 14:03:01.397 DEBUG 9248 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 14:03:01.397  INFO 9248 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2820 ms
+2020-05-09 14:03:01.512  INFO 9248 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 14:04:13.966  INFO 3236 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 3236 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 14:04:13.970  INFO 3236 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 14:04:15.186  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 14:04:15.187  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 14:04:15.221  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
+2020-05-09 14:04:15.243  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 14:04:15.244  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 14:04:15.262  INFO 3236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-05-09 14:04:16.274  INFO 3236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 14:04:16.288  INFO 3236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 14:04:16.288  INFO 3236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 14:04:16.564  INFO 3236 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 14:04:16.565 DEBUG 3236 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 14:04:16.566  INFO 3236 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2524 ms
+2020-05-09 14:04:16.819  INFO 3236 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 14:04:19.750  INFO 3236 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 14:04:19.827  INFO 3236 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 14:04:19.887  INFO 3236 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 14:04:20.001  INFO 3236 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 14:04:20.100  INFO 3236 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 14:04:20.256  INFO 3236 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 14:04:20.264  INFO 3236 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 14:04:20.876  INFO 3236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 14:04:20.890 DEBUG 3236 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 14:04:20.937 DEBUG 3236 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 14:04:20.939  INFO 3236 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 14:04:20.960 DEBUG 3236 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 14:04:20.967 DEBUG 3236 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 14:04:21.170  INFO 3236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 14:04:21.172  INFO 3236 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 7.796 seconds (JVM running for 9.113)
+2020-05-09 14:04:30.347  INFO 3236 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 14:04:30.347  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 14:04:30.348 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-05-09 14:04:30.358 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-09 14:04:30.358  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-09 14:04:30.372 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:04:30.376 DEBUG 3236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:04:30.529 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:04:30.693 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:04:43.592 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:04:43.600 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:04:43.617 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:04:45.031 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/personalInfo.html", parameters={}
+2020-05-09 14:04:45.033 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:04:45.040 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:04:47.814 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/personalInfo.html", parameters={}
+2020-05-09 14:04:47.816 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:04:47.819 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:18:39.369 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:18:39.371 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:18:39.377 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:20:08.914 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:20:08.915 DEBUG 3236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:20:10.971 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:20:10.976 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:20:10.996 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:20:10.998 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:11.001 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:20:18.319 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:20:18.320 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:18.340 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:20:28.408 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:20:28.409 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:28.411 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:20:34.614 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:20:34.614 DEBUG 3236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:20:34.658 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:20:34.662 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:20:34.681 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:20:34.682 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:34.684 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:20:35.881 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:20:35.882 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:35.885 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:20:53.364 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:20:53.364 DEBUG 3236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:20:53.405 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:20:53.409 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:20:53.428 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:20:53.429 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:20:53.430 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:21:06.463 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:21:06.463 DEBUG 3236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:21:06.504 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:21:06.508 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:21:06.527 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:21:06.528 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:21:06.530 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:21:07.956 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:21:07.958 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:21:07.962 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:22:28.202 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:22:28.203 DEBUG 3236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:22:28.291 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:22:28.296 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:22:28.324 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:22:28.332 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:22:28.335 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:22:30.023 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:22:30.023 DEBUG 3236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:22:30.064 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:22:30.069 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:22:30.095 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:22:30.096 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:22:30.098 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:22:30.697 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:22:30.697 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:22:30.701 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:24:56.838 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/login/personalCenter.html", parameters={}
+2020-05-09 14:24:56.840 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:24:56.841 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2020-05-09 14:24:56.842 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2020-05-09 14:24:56.847 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/bootdemo/error", parameters={}
+2020-05-09 14:24:56.848 DEBUG 3236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2020-05-09 14:24:56.853 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2020-05-09 14:24:56.856 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2020-05-09 14:33:43.231 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:33:43.233 DEBUG 3236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:33:45.281 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:33:45.289 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:33:45.323 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:33:45.325 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:33:45.327 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:33:47.336 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:33:47.336 DEBUG 3236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:33:47.386 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:33:47.391 DEBUG 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:33:47.437 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:33:47.438 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:33:47.440 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:33:49.693 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:33:49.693 DEBUG 3236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:33:49.737 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:33:49.740 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:33:49.762 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:33:49.764 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:33:49.765 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:35:25.622 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:35:25.622 DEBUG 3236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:35:25.716 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:35:25.719 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:35:25.743 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:35:25.744 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:35:25.747 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:45:31.243 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:45:31.244 DEBUG 3236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:45:33.292 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:45:33.299 DEBUG 3236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:45:33.355 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:45:33.356 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:45:33.358 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:45:36.562 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:45:36.563 DEBUG 3236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:45:36.608 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:45:36.612 DEBUG 3236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:45:36.658 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:45:36.659 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:45:36.662 DEBUG 3236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:46:03.366 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:46:03.368 DEBUG 3236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:46:03.410 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:46:03.419 DEBUG 3236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:46:03.454 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:46:03.456 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:46:03.458 DEBUG 3236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 14:46:43.440 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 14:46:43.441 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:46:43.445 DEBUG 3236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:46:44.155 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/personalInfo.html", parameters={}
+2020-05-09 14:46:44.156 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:46:44.159 DEBUG 3236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:49:17.337 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 14:49:17.338 DEBUG 3236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 14:49:17.492 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 14:49:17.496 DEBUG 3236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 14:49:17.534 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 14:49:17.536 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 14:49:17.541 DEBUG 3236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:05:56.101  INFO 16300 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 16300 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 15:05:56.108  INFO 16300 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 15:06:04.027  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 15:06:04.028  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 15:06:04.117  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 JPA repository interfaces.
+2020-05-09 15:06:04.270  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 15:06:04.272  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 15:06:04.302  INFO 16300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-05-09 15:06:14.389  INFO 16300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 15:06:14.399  INFO 16300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 15:06:14.400  INFO 16300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 15:06:14.999  INFO 16300 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 15:06:15.000 DEBUG 16300 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 15:06:15.000  INFO 16300 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 18774 ms
+2020-05-09 15:06:15.711  INFO 16300 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 15:06:18.887  INFO 16300 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 15:06:20.517  INFO 16300 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 15:06:20.621  INFO 16300 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 15:06:21.573  INFO 16300 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 15:06:21.825  INFO 16300 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 15:06:22.235  INFO 16300 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 15:06:22.317  INFO 16300 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 15:06:23.894  INFO 16300 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 15:06:23.913 DEBUG 16300 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 15:06:24.241 DEBUG 16300 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 15:06:24.246  INFO 16300 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 15:06:24.722 DEBUG 16300 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 15:06:24.753 DEBUG 16300 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 15:06:26.739  INFO 16300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 15:06:26.743  INFO 16300 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 32.214 seconds (JVM running for 37.521)
+2020-05-09 15:12:00.241  INFO 13816 --- [main] com.bootdemo.BootdemoApplication         : Starting BootdemoApplication on id201725010127 with PID 13816 (E:\intellijproject\bootdemo\target\classes started by ASUS in E:\intellijproject\bootdemo)
+2020-05-09 15:12:00.247  INFO 13816 --- [main] com.bootdemo.BootdemoApplication         : No active profile set, falling back to default profiles: default
+2020-05-09 15:12:02.169  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 15:12:02.170  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 15:12:02.214  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 JPA repository interfaces.
+2020-05-09 15:12:02.239  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-09 15:12:02.241  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-09 15:12:02.262  INFO 13816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2020-05-09 15:12:03.431  INFO 13816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 15:12:03.440  INFO 13816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 15:12:03.441  INFO 13816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 15:12:03.561  INFO 13816 --- [main] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring embedded WebApplicationContext
+2020-05-09 15:12:03.561 DEBUG 13816 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-09 15:12:03.562  INFO 13816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3180 ms
+2020-05-09 15:12:03.644  INFO 13816 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-09 15:12:08.872  INFO 13816 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-09 15:12:08.962  INFO 13816 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 15:12:09.039  INFO 13816 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 15:12:09.174  INFO 13816 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 15:12:09.298  INFO 13816 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-05-09 15:12:09.506  INFO 13816 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 15:12:09.515  INFO 13816 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 15:12:10.232  INFO 13816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 15:12:10.243 DEBUG 13816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-09 15:12:10.298 DEBUG 13816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2020-05-09 15:12:10.301  INFO 13816 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-05-09 15:12:10.323 DEBUG 13816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-09 15:12:10.333 DEBUG 13816 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-09 15:12:10.598  INFO 13816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bootdemo'
+2020-05-09 15:12:10.601  INFO 13816 --- [main] com.bootdemo.BootdemoApplication         : Started BootdemoApplication in 11.48 seconds (JVM running for 13.497)
+2020-05-09 15:12:20.803  INFO 13816 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[localhost].[/bootdemo]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 15:12:20.803  INFO 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 15:12:20.804 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-05-09 15:12:20.811 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-09 15:12:20.811  INFO 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-05-09 15:12:20.829 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:12:20.835 DEBUG 13816 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:12:21.021 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:12:21.246 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:15:20.031 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:15:20.032 DEBUG 13816 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:15:20.124 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:15:20.150 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:15:20.205 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:15:20.210 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:15:20.219 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:15:22.646 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:15:22.649 DEBUG 13816 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:15:22.696 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:15:22.702 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:15:22.752 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:15:22.753 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:15:22.755 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:15:45.350 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:15:45.351 DEBUG 13816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:15:45.399 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:15:45.411 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:15:45.462 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:15:45.463 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:15:45.465 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:15:47.514 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:15:47.514 DEBUG 13816 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:15:47.562 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:15:47.567 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:15:47.606 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:15:47.607 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:15:47.609 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:17:06.375 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:17:06.376 DEBUG 13816 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:17:06.464 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:17:06.468 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:17:06.509 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:17:06.510 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:17:06.514 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:17:47.067 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:17:47.068 DEBUG 13816 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:17:47.114 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:17:47.119 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:17:47.166 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:17:47.167 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:17:47.168 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:17:55.824 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:17:55.825 DEBUG 13816 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:17:55.868 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:17:55.871 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:17:55.905 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:17:55.906 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:17:55.908 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:17:58.636 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:17:58.637 DEBUG 13816 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:17:58.682 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:17:58.691 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:17:58.748 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:17:58.748 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:17:58.750 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:28.939 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:28.939 DEBUG 13816 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:29.058 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:29.066 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:29.126 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:29.127 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:29.128 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:31.455 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:31.455 DEBUG 13816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:31.498 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:31.504 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:31.594 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:31.598 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:31.600 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:33.765 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:33.765 DEBUG 13816 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:33.808 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:33.811 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:33.859 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:33.860 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:33.861 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:55.336 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:55.337 DEBUG 13816 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:55.378 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:55.380 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:55.413 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:55.414 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:55.416 DEBUG 13816 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:58.094 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:58.097 DEBUG 13816 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:58.140 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:58.146 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:58.199 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:58.200 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:58.202 DEBUG 13816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:18:59.891 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:18:59.891 DEBUG 13816 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:18:59.938 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:18:59.941 DEBUG 13816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:18:59.983 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:18:59.984 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:18:59.986 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:19:04.452 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/personalInfo.html", parameters={}
+2020-05-09 15:19:04.453 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:19:04.467 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:19:12.493 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 15:19:12.494 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:19:12.495 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:24:38.708 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:24:38.709 DEBUG 13816 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:24:40.770 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:24:40.772 DEBUG 13816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:24:40.822 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:24:40.824 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:24:40.826 DEBUG 13816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:24:44.707 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/personal/order.html", parameters={}
+2020-05-09 15:24:44.707 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:24:44.710 DEBUG 13816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:25:53.865 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:25:53.865 DEBUG 13816 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:25:53.954 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:25:53.957 DEBUG 13816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:25:54.006 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:25:54.007 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:25:54.008 DEBUG 13816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2020-05-09 15:26:18.555 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/bootdemo/login/login.do", parameters={masked}
+2020-05-09 15:26:18.556 DEBUG 13816 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootdemo.controller.UserController#doLogin(String, String, Model)
+2020-05-09 15:26:18.599 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, application/xml;q=0.9, */*;q=0.8]
+2020-05-09 15:26:18.605 DEBUG 13816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-05-09 15:26:18.670 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/bootdemo/js/jquery.js", parameters={}
+2020-05-09 15:26:18.672 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-05-09 15:26:18.674 DEBUG 13816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED

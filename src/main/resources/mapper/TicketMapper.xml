@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bootdemo.dao.TicketMapper">
+    <select id="selectTicket" resultType="com.bootdemo.domain.Ticket">
+        SELECT * FROM ticket WHERE ticketId = #{ticketId}
+    </select>
+
+    <select id="selectTypeId" resultType="java.lang.Integer">
+        SELECT typeId FROM ticket WHERE ticketId = #{ticketId}
+    </select>
+
+    <select id="selectNotSellTicketIdByTicketTypeId" resultType="com.bootdemo.domain.Ticket">
+        SELECT * FROM ticket WHERE typeId = #{ticketTypeId} AND isSell = 0 LIMIT 1
+    </select>
+
+    <select id="selectIsSell" resultType="java.lang.Byte">
+        SELECT isSell FROM ticket WHERE ticketId = #{ticketId}
+    </select>
+
+
+    <insert id="insertTicket" useGeneratedKeys="true" keyProperty="ticketId">
+        INSERT INTO ticket(typeId,compartmentNum,seatingNum)
+        VALUES (#{typeId},#{compartmentNum},#{seatingNum})
+    </insert>
+
+    <insert id="insertTicketByList">
+        INSERT INTO ticket(typeId,compartmentNum,seatingNum)
+        VALUES
+        <foreach collection ="ticketList" item="ticket"  index= "index"  separator="," >
+            (#{ticket.typeId},#{ticket.compartmentNum},#{ticket.seatingNum})
+        </foreach >
+    </insert>
+
+    <update id="updateTicketForIsSellByList">
+        UPDATE ticket
+        <set>
+            isSell=#{isSell}
+        </set>
+        WHERE ticketId IN
+        <foreach collection="ticketList" item="item" index="index" open="(" close=")" separator=",">
+            ${item.ticketId}
+        </foreach>
+    </update>
+
+    <update id="updateTypeSell">
+        UPDATE ticket SET isSell=1 WHERE ticketId = #{ticketId}
+    </update>
+
+</mapper>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <a href="/bootdemo/index.html">前去查询</a>
+</p>
+<p th:text="${#httpSession.getAttribute('user')}"></p>
+
+</body>
+</html>

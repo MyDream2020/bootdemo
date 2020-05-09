@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <script src="/bootdemo/js/jquery.js"></script>
+    <style>
+        .orders_display {
+            margin: 100px auto 10px;
+            width: 720px;
+            background-color: cornsilk;
+        }
+        .section_display label{
+            font-family: "Microsoft YaHei",serif;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+        .passenger_list {
+            margin-top: 10px;
+        }
+        .passenger_list table {
+            width: 720px;
+            text-align: center;
+            border-spacing: 10px;
+        }
+    </style>
+</head>
+<body >
+<div class="orders_display" >
+    <div class="section_display">
+        <p th:text="'亲爱的'+ ${#httpSession.getAttribute('user').getUserName()} +'，您好！您的订单信息为：'"></p>
+        <label >时间：[[${#dates.format(section.getDateStartTime(),'yyyy-MM-dd')}]]</label>
+        <label >车次：[[${section.getSectionId()}]]</label>
+        <label th:text="${section.getStartSection()} + '(' +
+        ${#dates.format(section.getDateStartTime(),'HH:mm')} + '开)'"></label>
+        <label> <--> </label>
+        <label th:text="${section.getEndSection()} + '(' +
+        ${#dates.format(section.getDateEndTime(),'HH:mm')} + '到)'"></label>
+    </div>
+    <div class="passenger_list">
+        <table>
+            <thead>
+            <th>乘客姓名</th>
+            <th>证件号码</th>
+            <th>坐席</th>
+            <th>票价</th>
+            </thead>
+            <tr th:each="p : ${passengers}">
+                <td th:text="${p.getUserName()}"></td>
+                <td th:text="${p.getCardId()}"></td>
+                <td th:text="${p.getTicketType().getSeatGrade()}"></td>
+                <td th:text="${p.getTicketType().getPrice()}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="other">
+        <span style="margin: 0 2%" th:text="'总金额：' + ${price}"></span>
+        <button type="button" id="btnSubmit" class="button button-submit">提交</button>
+    </div>
+</div>
+<script th:inline="javascript">
+
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            let userId = [[${#httpSession.getAttribute('user').getUserId()}]];
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/orders/pay.do",
+                async: false,
+                data: {
+                    "userId": userId
+                },
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg)
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

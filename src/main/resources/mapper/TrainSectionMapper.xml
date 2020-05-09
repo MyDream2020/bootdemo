@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bootdemo.dao.TrainSectionMapper">
+
+    <insert id="insertTrainSection" useGeneratedKeys="true" keyProperty="sectionId">
+        INSERT INTO train_section(trainId, startSection, endSection, startTime, endTime)
+        VALUES (#{trainId},#{startSection},#{endSection},#{startTime},#{endTime})
+    </insert>
+
+    <insert id="insertTrainSectionByList">
+        INSERT INTO train_section(trainId, startSection, endSection, startTime, endTime) VALUES
+        <foreach collection ="sectionList" item="section"  index= "index"  separator="," >
+         (#{section.trainId},#{section.startSection},#{section.endSection},#{section.startTime},#{section.endTime})
+        </foreach >
+    </insert>
+
+    <select id="selectTrainSectionByTimeAndPlace" resultType="com.bootdemo.domain.TrainSection"><![CDATA[
+        SELECT * FROM train_section WHERE startSection = #{startSection} AND
+        endSection = #{endSection} AND DATE_FORMAT(startTime, '%Y-%m-%d') = #{startTime}
+    ]]></select>
+
+    <select id="selectTrainSection" resultType="com.bootdemo.domain.TrainSection">
+        SELECT * FROM train_section WHERE sectionId = #{sectionId}
+    </select>
+
+
+
+
+
+</mapper>

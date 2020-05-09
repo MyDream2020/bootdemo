@@ -1,0 +1,2 @@
+user : UserId
+queryList : List<TrainSection>(匹配的车次号)

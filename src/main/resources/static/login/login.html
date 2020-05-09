@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>购票网站</title>
+
+    <script>
+        function myFunction() {
+            document.getElementById("verification").innerText = "";
+            document.getElementById("userName").focus()
+        }
+        function check() {     //判断账号密码对与否,是否为空等等
+            let phoneNumber = document.getElementById("phoneNumber").value;
+            let password = document.getElementById("password").value;
+
+            if (phoneNumber !== "" && password !== ""){
+                return true;
+            }
+            let verification = document.getElementById("verification");
+            verification.innerText = "用户名或密码不能为空！";
+            return false;
+        }
+    </script>
+
+    <style>
+        div.login-name,
+        .login-password,
+        .login-btn,
+        .login-code-txt {
+            margin: auto;
+            width: 30%;
+        }
+
+        div.login-box {
+            margin: auto;
+            width: 40%;
+            border: 1px solid #000000;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align: center">欢迎浏览购票网站</h1>
+    <form action="/bootdemo/login/login.do" method="post" onsubmit="return check()">
+        <div class="login-box">
+            <div class="login-name">
+                <p><label for="phoneNumber"></label><input type="text" class="input" name="phoneNumber" id="phoneNumber"
+                    placeholder="手机号" autofocus>
+            </div>
+            <div class="login-password">
+                <label for="password"></label><input type="password" class="input" name="password" id="password"
+                    placeholder="密码">
+            </div>
+            <p><label id="verification" style="margin:0 auto;  display:table"></label></p>
+            <div class="login-btn">
+                 <button  type="submit">立即登录</button>
+                |<input type="reset" value="重新输入" onclick="myFunction()">
+            </div>
+            <br>
+            <div class="login-code-txt"><a
+                    href="/bootdemo/register/register.html"
+                    style="text-decoration:none;" class="txt-primary">注册账号</a>
+                | <a href="https://www.baidu.com" style="text-decoration:none;" class="txt-lighter">忘记密码？</a>
+            </div>
+            <br>
+        </div>
+    </form>
+    </div>
+
+
+</body>
+
+</html>

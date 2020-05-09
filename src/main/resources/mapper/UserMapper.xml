@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bootdemo.dao.UserMapper">
+
+    <select id="selectUserByPhoneNumber" resultType="com.bootdemo.domain.User">
+        select * from user where phoneNumber = #{phoneNumber}
+    </select>
+
+    <select id="selectUser" resultType="com.bootdemo.domain.User">
+        select * from user where userId = #{userId}
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="userId">
+        insert into user (phoneNumber, cardId, userName, password)
+        values (#{phoneNumber},#{cardId},#{userName},#{password})
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bootdemo.dao.TrainTypeMapper">
+
+    <insert id="insertTrainType" useGeneratedKeys="true" keyProperty="trainId">
+        INSERT INTO train_type(carriageNum, allPassengerNum, wayStation)
+        VALUES (#{carriageNum},#{allPassengerNum},#{wayStation})
+    </insert>
+
+    <select id="selectTrainType" resultType="com.bootdemo.domain.TrainType">
+        SELECT * FROM train_type WHERE trainId = #{trainId}
+    </select>
+
+    <select id="selectTrainWay" resultType="java.lang.String">
+        SELECT wayStation FROM train_type WHERE trainId = #{trainId}
+    </select>
+
+
+
+</mapper>
