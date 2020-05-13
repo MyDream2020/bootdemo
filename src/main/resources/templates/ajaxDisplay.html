@@ -11,8 +11,7 @@
         <table  id="order_table" style="margin: auto auto; text-align: center;
         border-spacing:20px; border: 1px; font-family: 宋体, serif; font-weight: bold">
             <thead>
-            <th>姓&nbsp名</th>
-            <th>证件号码</th>
+            <th>乘客信息</th>
             <th>出发时间</th>
             <th>席&nbsp别</th>
             <th>车&nbsp厢</th>
@@ -20,14 +19,13 @@
             <th>创建时间</th>
             <th>票&nbsp价</th>
             <th>折&nbsp扣</th>
-            <th>状&nbsp态</th>
             <th>详&nbsp情</th>
+            <th>状&nbsp态</th>
+            <th>退&nbsp票</th>
             </thead>
             <tbody>
             <tr th:each="item, stat: ${displayOrders}">
-
-                <td th:text="${item.orders.userName}"></td>
-                <td th:text="${item.orders.cardId}"></td>
+                <td th:utext="${item.orders.cardId} + '<br>' + ${item.orders.userName} "></td>
                 <td th:text="${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
                 <td th:text="${item.seatGrade}"></td>
                 <td th:text="${item.ticket.compartmentNum}"></td>
@@ -35,13 +33,13 @@
                 <td th:text="${#dates.format(item.orders.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
                 <td th:text="${item.price}"></td>
                 <td th:text="${item.orders.isAdule}==1?'成人票':'学生票'"></td>
-                <td th:if="${item.orders.isPay}==1">已支付</td>
-                <td th:if="${item.orders.isChange}==1">已退票</td>
-                <td><a href="#" th:onclick="ticketInfo(
+                <td><a th:if="${item.orders.isChange} == 0" href="#" th:onclick="ticketInfo(
                 [[${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}]],
                 [[${item.ticket.compartmentNum}]], [[${item.ticket.seatingNum}]],[[${item.seatGrade}]],
                 [[${item.section.sectionId}]], [[${item.section.startSection}]], [[${item.section.endSection}]],
                 [[${item.price}]], [[${item.orders.userName}]], [[${item.orders.cardId}]])">车票</a> </td>
+                <td th:text="${item.orders.isChange} == 0?'已成功购买':'已完成退票'"></td>
+                <td><a th:if="${item.orders.isChange} == 0" href="#" th:onclick="refundTicket([[${item.ticket.ticketId}]])">退票</a></td>
             </tr>
             </tbody>
         </table>
@@ -59,6 +57,30 @@
             <tr>
                 <td>手机：</td><td th:text="${user.getPhoneNumber()}"></td>
             </tr>
+        </table>
+    </div>
+
+    <div id="no_pay_orders">
+        <table style="margin: auto auto; text-align: center;
+        border-spacing:20px; border: 1px; font-family: 宋体, serif; font-weight: bold">
+            <thead>
+            <th>乘客信息</th>
+            <th>出发站点</th>
+            <th>抵达站点</th>
+            <th>出发时间</th>
+            <th>票&nbsp种</th>
+            <th>创建时间</th>
+            </thead>
+            <tbody>
+            <tr th:each="item, stat: ${noPay}">
+                <td th:utext="${item.orders.cardId} + '<br>' + ${item.orders.userName} "></td>
+                <td th:text="${item.section.startSection}"></td>
+                <td th:text="${item.section.endSection}"></td>
+                <td th:text="${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+                <td th:text="${#dates.format(item.orders.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+                <td th:text="${item.orders.isAdule}==1?'成人票':'学生票'"></td>
+            </tr>
+            </tbody>
         </table>
     </div>
 

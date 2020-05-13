@@ -23,11 +23,11 @@
                 $("#informationView").load("/bootdemo/query/personal.do #personal_info_list", {"content": "info"});
             });
 
-            $("#ticket_history").click(function () {
+            $("#no_pay_history").click(function () {
                 $("#informationView").empty();
                 $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
                     "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
-                //$("#informationView").load("/bootdemo/query/personal.do #ticket_list",{"content" : "orders"});
+                $("#informationView").load("/bootdemo/query/personal.do #no_pay_orders", {"content": "noPay"});
             });
 
         });
@@ -47,6 +47,10 @@
             $("#ticket_info_cardId").html(cardId);
             $("#choiceWindow").show();
             $("#backGround").show();
+        }
+
+        function refundTicket(ticketId){
+            alert(ticketId);
         }
 
         $(document).ready(function () {
@@ -229,8 +233,8 @@
                     <h2 class="menu-tit">订单中心<i class="icon icon-switch"></i></h2>
                     <ul class="menu-sub">
                         <li><a href="#" id="ticket_new">最新购买</a></li>
-                        <li><a href="#" id="ticket_history">我的车票</a></li>
-                        <li><a href="#" id="orders_history">历史订单</a></li>
+                        <li><a href="#" id="orders_history">我的订单</a></li>
+                        <li><a href="#" id="no_pay_history">未支付订单</a></li>
                     </ul>
                 </li>
                 <li class="menu-item">

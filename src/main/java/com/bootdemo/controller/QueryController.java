@@ -93,6 +93,14 @@ public class QueryController {
             }
             redisUtil.set("userIdQuery"+user.getUserId(), displayOrders, 5);
             model.addAttribute("displayOrders", displayOrders);
+        } else if ("noPay".equals(content)){
+            List<DisplayOrders> noPayOrders = new ArrayList<>();
+            List<Orders> ordersList = ordersMapper.selectOrdersByUserIdIsPay(user.getUserId(),(byte) 0);
+            for (Orders orders : ordersList) {
+                TrainSection section = sectionMapper.selectTrainSection(orders.getSectionId());
+                noPayOrders.add(new DisplayOrders(section, orders, null,null,null));
+            }
+            model.addAttribute("noPay", noPayOrders);
         }
         return "ajaxDisplay";
     }
