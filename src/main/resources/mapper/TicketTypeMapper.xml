@@ -19,6 +19,10 @@
         SELECT price FROM ticket_type WHERE typeId = #{typeId}
     </select>
 
+    <select id="selectSeatGrade" resultType="java.lang.String">
+        SELECT seatGrade FROM ticket_type WHERE typeId = #{typeId}
+    </select>
+
     <select id="selectSeatNumber" resultType="java.lang.Integer">
         SELECT allSeatNum FROM ticket_type WHERE typeId = #{typeId}
     </select>

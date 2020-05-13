@@ -1,6 +1,7 @@
 package com.bootdemo.domain;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 /**
@@ -41,7 +42,7 @@ public class TicketType {
     }
 
     public BigDecimal getPrice() {
-        return price;
+        return price.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setPrice(BigDecimal price) {
@@ -78,8 +79,12 @@ public class TicketType {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         TicketType that = (TicketType) o;
         return typeId == that.typeId &&
                 sectionId == that.sectionId &&

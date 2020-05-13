@@ -48,12 +48,9 @@ public class TrainSection {
         this.endSection = endSection;
     }
 
-    public String getStartTime() {
-        String time = startTime.toString();
-        return time.substring(0,time.indexOf('.'));
-    }
 
-    public Timestamp getDateStartTime(){
+
+    public Timestamp getStartTime(){
         return startTime;
     }
 
@@ -61,12 +58,7 @@ public class TrainSection {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
-        String time = endTime.toString();
-        return time.substring(0,time.indexOf('.'));
-    }
-
-    public Timestamp getDateEndTime(){
+    public Timestamp getEndTime(){
         return endTime;
     }
 

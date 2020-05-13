@@ -32,13 +32,13 @@
 <div class="orders_display" >
     <div class="section_display">
         <p th:text="'亲爱的'+ ${#httpSession.getAttribute('user').getUserName()} +'，您好！您的订单信息为：'"></p>
-        <label >时间：[[${#dates.format(section.getDateStartTime(),'yyyy-MM-dd')}]]</label>
+        <label >时间：[[${#dates.format(section.getStartTime(),'yyyy-MM-dd')}]]</label>
         <label >车次：[[${section.getSectionId()}]]</label>
         <label th:text="${section.getStartSection()} + '(' +
-        ${#dates.format(section.getDateStartTime(),'HH:mm')} + '开)'"></label>
+        ${#dates.format(section.getStartTime(),'HH:mm')} + '开)'"></label>
         <label> <--> </label>
         <label th:text="${section.getEndSection()} + '(' +
-        ${#dates.format(section.getDateEndTime(),'HH:mm')} + '到)'"></label>
+        ${#dates.format(section.getEndTime(),'HH:mm')} + '到)'"></label>
     </div>
     <div class="passenger_list">
         <table>

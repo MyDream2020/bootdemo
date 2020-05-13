@@ -111,13 +111,13 @@
             <td>目的站点：</td>
             <td>[[*{getEndSection()}]]</td>
         </tr>
-        <tr th:object="${info.getSection()}">
+        <tr>
             <td>出发时间：</td>
-            <td>[[*{getStartTime()}]]</td>
+            <td th:text="${#dates.format(info.getSection().getStartTime(),'yyyy-MM-dd HH:mm:ss')}"></td>
         </tr>
-        <tr th:object="${info.getSection()}">
+        <tr>
             <td>到达时间：</td>
-            <td>[[*{getEndTime()}]]</td>
+            <td th:text="${#dates.format(info.getSection().getEndTime(),'yyyy-MM-dd HH:mm:ss')}"></td>
         </tr>
     </table>
     <table class="ticket_list">

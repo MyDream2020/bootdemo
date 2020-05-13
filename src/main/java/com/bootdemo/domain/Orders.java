@@ -1,129 +1,111 @@
 package com.bootdemo.domain;
 
-import java.io.Serializable;
-import java.util.Objects;
+
+import java.sql.Timestamp;
 
 /**
- * @Author: ASUS
- * @Date: 2020/4/5 14:54
- * @Version: 1.0
+ * @author ASUS
  */
-public class Orders implements Serializable {
-    private int orderId;
-    private int userId;
-    private String cardId;
-    private String userName;
-    private int sectionId;
-    private int ticketId;
-    private byte isAdule;
-    private byte isPay;
-    private byte isChange;
+public class Orders {
 
-    public int getOrderId() {
-        return orderId;
-    }
+  private int orderId;
+  private int userId;
+  private String cardId;
+  private String userName;
+  private int sectionId;
+  private int ticketId;
+  private byte isAdule;
+  private byte isPay;
+  private byte isChange;
+  private Timestamp createTime;
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+  public int getOrderId() {
+    return orderId;
+  }
 
-    public String getCardId() {
-        return cardId;
-    }
+  public void setOrderId(int orderId) {
+    this.orderId = orderId;
+  }
 
-    public void setCardId(String cardId) {
-        this.cardId = cardId;
-    }
 
-    public String getUserName() {
-        return userName;
-    }
+  public int getUserId() {
+    return userId;
+  }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+  public void setUserId(int userId) {
+    this.userId = userId;
+  }
 
-    public int getSectionId() {
-        return sectionId;
-    }
 
-    public void setSectionId(int sectionId) {
-        this.sectionId = sectionId;
-    }
+  public String getCardId() {
+    return cardId;
+  }
 
-    public int getTicketId() {
-        return ticketId;
-    }
+  public void setCardId(String cardId) {
+    this.cardId = cardId;
+  }
 
-    public void setTicketId(int ticketId) {
-        this.ticketId = ticketId;
-    }
 
-    public byte getIsAdule() {
-        return isAdule;
-    }
+  public String getUserName() {
+    return userName;
+  }
 
-    public void setIsAdule(byte isAdule) {
-        this.isAdule = isAdule;
-    }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
-    public byte getIsPay() {
-        return isPay;
-    }
 
-    public void setIsPay(byte isPay) {
-        this.isPay = isPay;
-    }
+  public int getSectionId() {
+    return sectionId;
+  }
 
-    public byte getIsChange() {
-        return isChange;
-    }
+  public void setSectionId(int sectionId) {
+    this.sectionId = sectionId;
+  }
 
-    public void setIsChange(byte isChange) {
-        this.isChange = isChange;
-    }
 
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "orderId=" + orderId +
-                ", userId=" + userId +
-                ", cardId='" + cardId + '\'' +
-                ", userName='" + userName + '\'' +
-                ", sectionId=" + sectionId +
-                ", ticketId=" + ticketId +
-                ", isAdule=" + isAdule +
-                ", isPay=" + isPay +
-                ", isChange=" + isChange +
-                '}';
-    }
+  public int getTicketId() {
+    return ticketId;
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Orders orders = (Orders) o;
-        return orderId == orders.orderId &&
-                userId == orders.userId &&
-                sectionId == orders.sectionId &&
-                ticketId == orders.ticketId &&
-                isAdule == orders.isAdule &&
-                isPay == orders.isPay &&
-                isChange == orders.isChange &&
-                Objects.equals(cardId, orders.cardId) &&
-                Objects.equals(userName, orders.userName);
-    }
+  public void setTicketId(int ticketId) {
+    this.ticketId = ticketId;
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(orderId, userId, cardId, userName, sectionId, ticketId, isAdule, isPay, isChange);
-    }
+
+  public byte getIsAdule() {
+    return isAdule;
+  }
+
+  public void setIsAdule(byte isAdule) {
+    this.isAdule = isAdule;
+  }
+
+
+  public byte getIsPay() {
+    return isPay;
+  }
+
+  public void setIsPay(byte isPay) {
+    this.isPay = isPay;
+  }
+
+
+  public byte getIsChange() {
+    return isChange;
+  }
+
+  public void setIsChange(byte isChange) {
+    this.isChange = isChange;
+  }
+
+  public Timestamp getCreateTime() {
+    return createTime;
+  }
+
+  public void setCreateTime(Timestamp createTime) {
+    this.createTime = createTime;
+  }
 }

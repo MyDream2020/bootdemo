@@ -27,3 +27,12 @@ validation-query: SELECT 1 FROM DUAL
         url-pattern: /*
         # 忽略过滤格式
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+
+
+
+
+<td><a href="#" th:onclick="ticketInfo(
+                [[${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}]],
+                [[${item.ticket.compartmentNum}]], [[${item.ticket.seatingNum}]],[[${item.seatGrade}]],
+                [[${item.section.sectionId}]], [[${item.section.startSection}]], [[${item.section.endSection}]],
+                [[${item.price}]], [[${item.orders.userName}]], [[${item.orders.cardId}]])">车票</a> </td>

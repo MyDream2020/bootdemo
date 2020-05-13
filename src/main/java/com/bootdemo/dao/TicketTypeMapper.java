@@ -31,4 +31,6 @@ public interface TicketTypeMapper {
     int insertTrainTicketTypeByList(@Param("ticketTypeList") List<TicketType> ticketTypeList);
 
     int updateTypeForDecrByList (@Param("typeIdList") List<Integer> typeIdList);
+
+    String selectSeatGrade(int typeId);
 }

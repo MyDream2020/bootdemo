@@ -63,6 +63,7 @@ public class OrderController {
 
         //TODO 设置一个专门的error页面
         if (section == null || user == null){
+            model.addAttribute("error", "尚未登录");
             return "loginError";
         }
         String way = trainTypeMapper.selectTrainWay(section.getTrainId());
@@ -126,7 +127,6 @@ public class OrderController {
             }
             passenger.setTicketType(infoToTicketType);
             sum = sum.add(temp);
-            //redisUtil.set("cardId" + passenger.getCardId(), infoToTicketType, 15);
             notPayOrders.setUserId(temporaryorders.getUserId());
             notPayOrders.setSectionId(temporaryorders.getSectionId());
             notPayOrders.setUserName(passenger.getUserName());
@@ -174,6 +174,7 @@ public class OrderController {
         ordersMapper.updateOrdersForTicketAndSellByList(ordersList);
         redisUtil.set("userIdOrders" + userId, ordersList, 15);
         redisUtil.set("userTicket" + userId, ticketList, 15);
+        redisUtil.del("userIdQuery" + userId);
         ticketTypeMapper.updateTypeForDecrByList(typeIdList);
         for (Integer id : typeIdList) {
             redisUtil.decr("typeNum" + id);

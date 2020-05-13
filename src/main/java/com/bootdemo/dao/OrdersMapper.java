@@ -30,4 +30,6 @@ public interface OrdersMapper {
 
     int updateOrdersForTicketAndSellByList(@Param("ordersList")List<Orders> ordersList);
 
+    List<Orders> selectOrdersByUserIdIsPay(@Param("userId") int userId, @Param("isPay") byte isPay);
+
 }

@@ -8,6 +8,16 @@
         </if>
     </select>
 
+    <select id="selectIsPayOrdersByUserId" resultType="com.bootdemo.domain.Orders">
+        SELECT * FROM orders WHERE isPay = 1 AND userId = #{userId} ORDER BY orderId desc
+    </select>
+
+    <select id="selectOrdersByUserIdIsPay" resultType="com.bootdemo.domain.Orders">
+        SELECT * FROM orders WHERE isPay = #{isPay} AND userId = #{userId} ORDER BY orderId desc
+    </select>
+
+
+
 
     <select id="selectTicketId" resultType="java.lang.Integer">
         SELECT ticketId FROM orders WHERE orderId = #{orderId}

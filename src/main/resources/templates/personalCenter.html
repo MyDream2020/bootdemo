@@ -8,35 +8,87 @@
     <script src="/bootdemo/js/jquery.js"></script>
     <script>
         $(document).ready(function () {
-            $("#chakangerenxinxi").click(function () {
-                $("#informationView").load("/bootdemo/personal/personalInfo.html");
+            $("#orders_history").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                $("#informationView").load("/bootdemo/query/personal.do #orders_list", {"content": "orders"});
             });
+
+            $("#login_out").click(function () {
+                window.location.href = "/bootdemo/query/personal.do?content=logout";
+            });
+
+            $("#personal_info").click(function () {
+                $("#informationView").load("/bootdemo/query/personal.do #personal_info_list", {"content": "info"});
+            });
+
+            $("#ticket_history").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                //$("#informationView").load("/bootdemo/query/personal.do #ticket_list",{"content" : "orders"});
+            });
+
         });
+    </script>
+    <script th:inline="javascript">
+        function ticketInfo(startTime, compartmentNum, seatingNum, seatGrade,
+                            sectionId, startSection, endSection, price,
+                            userName, cardId) {
+            $("#ticket_info_startStation").html(startSection);
+            $("#ticket_info_endStation").html(endSection);
+            $("#ticket_info_seatGrade").html(seatGrade);
+            $("#ticket_info_price").html("￥" + price + "元")
+            $("#ticket_info_compartmentNum").html(compartmentNum + "厢")
+            $("#ticket_info_seatNum").html(seatingNum + "号")
+            $("#ticket_info_startTime").html(startTime + " 开");
+            $("#ticket_info_userName").html(userName);
+            $("#ticket_info_cardId").html(cardId);
+            $("#choiceWindow").show();
+            $("#backGround").show();
+        }
+
         $(document).ready(function () {
-            $("#dingdan").click(function () {
-                $("#informationView").load("/bootdemo/personal/order.html");
-            });
+            $("#x").click(function () {
+                $("#choiceWindow").hide();
+                $("#backGround").hide();
+            })
         });
+    </script>
+    <script>
+        function aboutDisplay() {
+
+            let about = $("<div class=\"about_info\" style=\'margin: 8% 30%\'>\n    " +
+                "<p class=\"about_title\">SCAU TicketCondition 0.0.1-SNAPSHOT</p>\n    " +
+                "<p class=\"about_content\">Build #IntelliJ IDEA 2020.1.1 (Ultimate Edition)</p>\n    " +
+                "<p class=\"about_content\">Built on May 30, 2020</p>\n    " +
+                "<p class=\"about_title\">Author By ZJM CYJ ZYQ</p>\n    " +
+                "<p class=\"about_content\">SpringBoot 2.2.5.RELEASE MySQL 5.7.25 Redis 5.0.3 </p>\n    " +
+                "<p class=\"about_content\">For DataBase Course use only.</p>" +
+                "\n</div>\n");
+            $("#informationView").empty();
+            about.appendTo("#informationView");
+        }
     </script>
 </head>
 <style>
-
-
     .column {
         float: left;
         padding: 10px;
     }
 
     .column.side {
-        width: 25%;
+        width: 15%;
 
     }
 
     .column.middle {
-        margin-top: 5%;
-        border:3px solid #070707;
-        width: 60%;
-        height: 80%;
+        position: relative;
+        margin-top: 1%;
+        border: 2px solid #b3acac;
+        width: 80%;
+        min-height: 400px;
     }
 
     .topnav {
@@ -61,9 +113,95 @@
     }
 
 </style>
+<style>
+    .about_info {
+        position: absolute;
+        margin: 10% 25%;
+        font-size: 16px;
+    }
 
+    .about_title {
+        font-weight: bolder;
+    }
+
+    #orders_info {
+
+    }
+</style>
+<style type="text/css">
+    #choiceWindow {
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 32%;
+        width: 40%;
+        height: 60%;
+        padding: 20px;
+        border: 3px solid #cccccc;
+        background-image: url("/bootdemo/img/ticket.jpg");
+        background-size: 100% 100%;
+        z-index: 2;
+        overflow: auto;
+        font-family: 宋体, serif;
+        font-weight: bold;
+    }
+
+    #backGround {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 1100px;
+        background-color: black;
+        z-index: 1;
+        -moz-opacity: 0.8;
+        opacity: .80;
+        filter: alpha(opacity=88);
+    }
+
+    #x:hover {
+        cursor: pointer;
+        color: rgb(55, 198, 192);
+    }
+</style>
 <body>
+<div>
+    <div id="choiceWindow">
+        <label id="x" style="position: absolute;top:2px;left: 95%;font-size: 25px;">x</label>
+        <br>
+        <div style="font-size: 45px; margin-left: 20%">
+            <label style="margin: 12%;  font-family: 'Times New Roman',serif;font-size: 20px">SCAUDB Ticket Condition</label>
+            <br>
+            <label id="ticket_info_startStation" style="margin-top: 25%"></label>
+            &nbsp;&nbsp;
+            <label id="ticket_info_endStation"></label>
+        </div>
+        <div style="font-size: 20px; line-height: 50px">
+            <label id="ticket_info_startTime" style="margin-left: 15%"></label>
+            &nbsp;&nbsp;
+            <label id="ticket_info_compartmentNum"></label>
+            <label id="ticket_info_seatNum"></label>
+            <label id="ticket_info_price" style="margin-left: 15%"></label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label id="ticket_info_seatGrade"></label>
+            <br>
+            <label style="margin-left: 15%">限乘当日当次车</label>
+            <br>
+            <label id="ticket_info_userName" style="margin-left: 15%"></label>
+            <br>
+            <label id="ticket_info_cardId" style="margin-left: 15%"></label>
+        </div>
+        <div style="position: absolute; right: 15%; top: 65%">
+            <img src="/bootdemo/img/download.png" style="display: block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #DEDEDE;">
+        </div>
 
+    </div>
+    <div id="backGround"></div>
+</div>
 <!-- 头部 -->
 <div class="header">
     <div class="wrapper">
@@ -75,8 +213,8 @@
     <!--公共导航栏-->
     <div class="topnav">
         <a href="#" onclick="window.location.reload()">个人中心</a>
-        <a href="#">车次查询</a>
-        <a href="#">关于我们</a>
+        <a href="/bootdemo/index.html">车次查询</a>
+        <a href="#" onclick="aboutDisplay()">关于我们</a>
     </div>
     <!--公共导航栏 end-->
     <!-- 主体内容 -->
@@ -88,26 +226,26 @@
             <!-- 个人中心左侧菜单 -->
             <ul class="center-menu">
                 <li class="menu-item">
-                    <h2 class="menu-tit">个人信息<i class="icon icon-switch"></i></h2>
+                    <h2 class="menu-tit">订单中心<i class="icon icon-switch"></i></h2>
                     <ul class="menu-sub">
-                        <li id="gerenxinxi"><a href="#" id="chakangerenxinxi">查看个人信息</a></li>
-                        <li id="zhanghaozhuxiao"><a href="#">账号注销</a></li>
+                        <li><a href="#" id="ticket_new">最新购买</a></li>
+                        <li><a href="#" id="ticket_history">我的车票</a></li>
+                        <li><a href="#" id="orders_history">历史订单</a></li>
                     </ul>
                 </li>
                 <li class="menu-item">
-                    <h2 class="menu-tit">订单中心<i class="icon icon-switch"></i></h2>
+                    <h2 class="menu-tit">个人信息<i class="icon icon-switch"></i></h2>
                     <ul class="menu-sub">
-                        <li><a href="#">最新购买</a></li>
-                        <li id="chepiaodingdan"><a href="#" id="dingdan">我的车票</a></li>
-                        <li><a href="#">历史订单</a></li>
+                        <li><a href="#" id="personal_info">查看个人信息</a></li>
+                        <li><a href="#" id="login_out">账号注销</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <!-- 个人中心右侧 -->
-            <div class="column middle" id="informationView">
+        <div class="column middle" id="informationView">
 
-            </div>
+        </div>
     </div>
 </div>
 </body>

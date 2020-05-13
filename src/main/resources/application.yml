@@ -46,3 +46,6 @@ logging:
     org:
       springframework:
         web: debug
+    com:
+      bootdemo:
+        dao: debug
