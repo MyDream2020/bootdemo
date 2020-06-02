@@ -62,7 +62,7 @@
 
     <div id="no_pay_orders">
         <table style="margin: auto auto; text-align: center;
-        border-spacing:20px; border: 1px; font-family: 宋体, serif; font-weight: bold">
+        border-spacing:30px; border: 1px; font-family: 宋体, serif; font-weight: bold">
             <thead>
             <th>乘客信息</th>
             <th>出发站点</th>
@@ -77,11 +77,15 @@
                 <td th:text="${item.section.startSection}"></td>
                 <td th:text="${item.section.endSection}"></td>
                 <td th:text="${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
-                <td th:text="${#dates.format(item.orders.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
                 <td th:text="${item.orders.isAdule}==1?'成人票':'学生票'"></td>
+                <td th:text="${#dates.format(item.orders.createTime,'yyyy-MM-dd HH:mm:ss')}"></td>
             </tr>
             </tbody>
         </table>
+    </div>
+
+    <div id="new_list">
+
     </div>
 
 </body>

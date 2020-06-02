@@ -52,7 +52,7 @@
             padding-left: 50px ;
         }
 
-        #userName, #password, #cardId, #name, #phoneNumber, #birthday, #checkcode {
+        #userName, #password, #cardId, #name, #phoneNumber,#password-a,#birthday, #checkcode {
             width: 251px;
             height: 32px;
             border: 1px solid #A6A6A6;
@@ -86,10 +86,20 @@
     <script>
         window.onload = function(){
             document.getElementById("form").onsubmit = function(){
-                return checkUsername() && checkPassword();
+                if(checkUsername() && checkPassword() && checkPasswordAgain())
+                {
+
+                    return true;
+                }
+               else{
+                   alert("注册失败");
+                   return  false;
+                }
             };
             document.getElementById("userName").onblur = checkUsername;
             document.getElementById("password").onblur = checkPassword;
+            document.getElementById("password-a").onblur = checkPasswordAgain;
+
         };
 
         function checkUsername(){
@@ -99,7 +109,11 @@
             var s_username = document.getElementById("s_username");
             if(flag){
                 s_username.innerHTML = "<img width='35' height='25' src='/bootdemo/img/gou.png'/>";
-            }else{
+            }
+            else if(username==""){
+
+            }
+            else{
                 s_username.innerHTML = "用户名格式有误";
             }
             return flag;
@@ -112,8 +126,28 @@
             var s_password = document.getElementById("s_password");
             if(flag){
                 s_password.innerHTML = "<img width='35' height='25' src='/bootdemo/img/gou.png'/>";
-            }else{
+            }
+            else if(password==""){
+
+            }
+            else{
                 s_password.innerHTML = "密码格式有误";
+            }
+            return flag;
+        }
+        function checkPasswordAgain() {
+            var passworda= document.getElementById("password-a").value;  <!--第二次输入的密码-->
+            var password = document.getElementById("password").value; <!--第一次输入的密码-->
+            var flag = false;
+            if(password!=passworda ){
+                s_passworda.innerHTML = "两次输入密码不相同";
+            }
+            else if(password==""){
+
+            }
+            else{
+                s_passworda.innerHTML = "<img width='35' height='25' src='/bootdemo/img/gou.png'/>";
+                flag = true;
             }
             return flag;
         }
@@ -137,10 +171,10 @@
             <form action="/bootdemo/register/register.do" id="form" method="post">
                 <table>
                     <tr>
-                        <td class="td_left"><label for="userName">姓名</label></td>
+                        <td class="td_left"><label for="userName">用户名</label></td>
                         <td class="td_right">
                             <input type="hidden" name="userId" value="0">
-                            <input type="text" name="userName" id="userName" placeholder="请输入用户名,2-6字符">
+                            <input type="text" name="userName" id="userName" placeholder="请输入用户名,2-6字符" autofocus>
                             <span id="s_username" class="error"></span>
                         </td>
                     </tr>
@@ -151,10 +185,17 @@
                     </tr>
 
                     <tr>
-                        <td class="td_left"><label for="password">密码</label></td>
+                        <td class="td_left"><label for="password">登录密码</label></td>
                         <td class="td_right">
                             <input type="password" name="password" id="password" placeholder="请输入密码">
                             <span id="s_password" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="password">确认密码</label></td>
+                        <td class="td_right">
+                            <input type="password" name="password-a" id="password-a" placeholder="请再次输入密码">
+                            <span id="s_passworda" class="error"></span>
                         </td>
                     </tr>
 

@@ -61,10 +61,7 @@ public class QueryController {
     public String doPersonal(String content, Model model){
         User user = (User) session.getAttribute("user");
         model.addAttribute("user", user);
-        if ("logout".equals(content)){
-            session.removeAttribute("user");
-            return "redirect:/login/login.html";
-        } else if ("orders".equals(content)){
+        if ("orders".equals(content)){
             List<DisplayOrders> displayOrders = (List<DisplayOrders>) redisUtil.get("userIdQuery"+user.getUserId());
             if (displayOrders == null){
                 displayOrders = new ArrayList<>();
@@ -98,9 +95,22 @@ public class QueryController {
             List<Orders> ordersList = ordersMapper.selectOrdersByUserIdIsPay(user.getUserId(),(byte) 0);
             for (Orders orders : ordersList) {
                 TrainSection section = sectionMapper.selectTrainSection(orders.getSectionId());
-                noPayOrders.add(new DisplayOrders(section, orders, null,null,null));
+                noPayOrders.add(new DisplayOrders(section, orders, null,"",new BigDecimal("0")));
             }
             model.addAttribute("noPay", noPayOrders);
+        }
+        return "ajaxDisplay";
+    }
+
+    @RequestMapping("/query/news.do")
+    public String doNewInfo(String content, Model model){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user", user);
+        if ("logout".equals(content)){
+            session.removeAttribute("user");
+            return "redirect:/login/login.html";
+        } else {
+            
         }
         return "ajaxDisplay";
     }

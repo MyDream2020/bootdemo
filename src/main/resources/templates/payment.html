@@ -75,7 +75,15 @@
                 },
                 success: function (msg) {
                     if (msg) {//根据返回值进行跳转
-                        alert(msg)
+                        msg = msg + "\n点击确认返回个人中心";
+                        let result = confirm(msg);
+                        if (result === true){
+
+                            window.location.href="/bootdemo/redirect/personalCenter";
+                        }
+                        else {
+                            window.location.href="/bootdemo/index.html";
+                        }
                     }
                 }
             });

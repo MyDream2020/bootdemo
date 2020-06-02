@@ -14,9 +14,15 @@
                     "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
                 $("#informationView").load("/bootdemo/query/personal.do #orders_list", {"content": "orders"});
             });
+            $("#ticket_new").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                $("#informationView").load("/bootdemo/query/news.do #new_list", {"content": "news"});
+            });
 
             $("#login_out").click(function () {
-                window.location.href = "/bootdemo/query/personal.do?content=logout";
+                window.location.href = "/bootdemo/query/news.do?content=logout";
             });
 
             $("#personal_info").click(function () {

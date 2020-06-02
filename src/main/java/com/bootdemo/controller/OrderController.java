@@ -160,7 +160,7 @@ public class OrderController {
                 if (ticketList.size() > 0){
                     ticketMapper.updateTicketForIsSellByList(ticketList, (byte) 0);
                 }
-                return "支付失败！余票不足！";
+                return "    支付失败！余票不足！";
             }
             ticketMapper.updateTypeSell(ticket.getTicketId());
             ticketList.add(ticket);
@@ -179,6 +179,6 @@ public class OrderController {
         for (Integer id : typeIdList) {
             redisUtil.decr("typeNum" + id);
         }
-        return "success";
+        return "    购买成功";
     }
 }

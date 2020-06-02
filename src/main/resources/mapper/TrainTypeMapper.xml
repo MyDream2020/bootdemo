@@ -3,8 +3,8 @@
 <mapper namespace="com.bootdemo.dao.TrainTypeMapper">
 
     <insert id="insertTrainType" useGeneratedKeys="true" keyProperty="trainId">
-        INSERT INTO train_type(carriageNum, allPassengerNum, wayStation)
-        VALUES (#{carriageNum},#{allPassengerNum},#{wayStation})
+        INSERT INTO train_type(trainName,carriageNum, allPassengerNum, wayStation)
+        VALUES (#{trainName},#{carriageNum},#{allPassengerNum},#{wayStation})
     </insert>
 
     <select id="selectTrainType" resultType="com.bootdemo.domain.TrainType">

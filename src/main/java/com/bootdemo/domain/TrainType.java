@@ -1,6 +1,5 @@
 package com.bootdemo.domain;
 
-import java.util.Objects;
 
 /**
  * @Author: ASUS
@@ -11,6 +10,7 @@ public class TrainType {
     private int trainId;
     private int carriageNum;
     private int allPassengerNum;
+    private String trainName;
     private String wayStation;
 
     public int getTrainId() {
@@ -45,6 +45,13 @@ public class TrainType {
         this.wayStation = wayStation;
     }
 
+    public String getTrainName() {
+        return trainName;
+    }
+
+    public void setTrainName(String trainName) {
+        this.trainName = trainName;
+    }
 
     @Override
     public String toString() {
@@ -52,23 +59,8 @@ public class TrainType {
                 "trainId=" + trainId +
                 ", carriageNum=" + carriageNum +
                 ", allPassengerNum=" + allPassengerNum +
+                ", trainName='" + trainName + '\'' +
                 ", wayStation='" + wayStation + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TrainType trainType = (TrainType) o;
-        return trainId == trainType.trainId &&
-                carriageNum == trainType.carriageNum &&
-                allPassengerNum == trainType.allPassengerNum &&
-                Objects.equals(wayStation, trainType.wayStation);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(trainId, carriageNum, allPassengerNum, wayStation);
     }
 }

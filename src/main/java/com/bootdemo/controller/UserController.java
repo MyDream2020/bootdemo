@@ -32,6 +32,13 @@ public class UserController {
         this.session = session;
     }
 
+    @RequestMapping("/redirect/personalCenter")
+    public String redirectToPersonalCenter(Model model){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute(user);
+        return "personalCenter";
+    }
+
     @RequestMapping({"/login/login.do"})
     public String doLogin(@RequestParam String phoneNumber,
                           @RequestParam String password, Model model){

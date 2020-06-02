@@ -59,5 +59,8 @@
         </foreach>
     </update>
 
+    <update id="updateOrdersForChangeByOrdersId">
+        update orders set isChange = 1 where orderId = #{orderId}
+    </update>
 
 </mapper>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>添加列车信息</title>
+    <style>
+        * {margin:0;padding:0;font-size:12px;}
+        html,body {height:100%;width:100%;}
+        #content {background:#f8f8f8;padding:30px;height:100%;}
+        #content a {font-size:30px;color:#369;font-weight:700;}
+        #alert {border:1px solid #369;width:500px;height:300px;background:#e2ecf5;z-index:1000;position:absolute;display:none;}
+        #alert h4 {height:20px;background:#369;color:#fff;padding:5px 0 0 5px;}
+        #alert h4 span {float:left;}
+        #alert h4 span#close {margin-left:400px;font-weight:500;cursor:pointer;}
+        #alert p {padding:12px 0 0 30px;float: left}
+        #alert p input {width:120px;margin-left:20px;}
+        #alert p input.myinp {border:1px solid #ccc;height:16px; float: right}
+        #alert p input.sub {width:60px;margin-left:30px;}
+
+    </style>
+
+</head>
+
+<body>
+<div id="content">
+    <div>
+    <a href="#">添加列车信息</a>
+    </div>
+
+</div>
+
+<div id="alert">
+    <h4><span>列车信息</span><span id="close">关闭</span></h4>
+    <p><label>列车号:</label><input type="text" class="myinp" id="trainId" ></p>
+    <form name="form_name">
+
+        <p><label>出发时间:</label><input type="text" class="myinp"></p>
+        <p><label>起点:</label><input type="text" class="myinp"></p>
+        <p><label>终点:</label><input type="text" class="myinp"></p>
+        <p><label>一等座数量:</label><input type="text" class="myinp"></p>
+        <p><label>一等座票价:</label><input type="text" class="myinp"></p>
+        <p><label>二等座数量:</label><input type="text" class="myinp"></p>
+        <p><label>二等座票价:</label><input type="text" class="myinp"></p>
+        <p><label>三等座数量:</label><input type="text" class="myinp"></p>
+        <p><label>三等座票价:</label><input type="text" class="myinp"></p>
+        <p><input type="submit" value="添加" class="sub" /><input type="reset" value="重置" class="sub" onclick="f()" /></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+    var myAlert = document.getElementById("alert");
+    var reg = document.getElementById("content").getElementsByTagName("a")[0];
+    var mClose = document.getElementById("close");
+    var fc = document.getElementById("trainId");
+    reg.onclick = function()
+    {
+
+        myAlert.style.display = "block";
+        myAlert.style.position = "absolute";
+        myAlert.style.top = "50%";
+        myAlert.style.left = "45%";
+        myAlert.style.marginTop = "-150px";
+        myAlert.style.marginLeft = "-150px";
+
+
+        mybg = document.createElement("div");
+        mybg.setAttribute("id","mybg");
+        mybg.style.background = "#000";
+        mybg.style.width = "100%";
+        mybg.style.height = "100%";
+        mybg.style.position = "absolute";
+        mybg.style.top = "0";
+        mybg.style.left = "0";
+        mybg.style.zIndex = "500";
+        mybg.style.opacity = "0.3";
+        mybg.style.filter = "Alpha(opacity=30)";
+        document.body.appendChild(mybg);
+        fc.focus();
+        document.body.style.overflow = "hidden";
+    }
+
+    mClose.onclick = function()
+    {
+        myAlert.style.display = "none";
+        mybg.style.display = "none";
+    }
+    function f(){
+        document.getElementById("trainId").focus()
+    }
+</script>
+</body>
+</html>
