@@ -15,6 +15,13 @@
         SELECT wayStation FROM train_type WHERE trainId = #{trainId}
     </select>
 
+    <select id="selectAllForInfo" resultType="com.bootdemo.domain.TrainType">
+        SELECT * FROM train_type LIMIT #{start},#{end}
+    </select>
+
+    <select id="selectName" resultType="java.lang.String">
+        SELECT trainName FROM train_type WHERE trainId = #{trainId}
+    </select>
 
 
 </mapper>

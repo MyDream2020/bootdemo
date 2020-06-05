@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            background: url("./img/background.png");
+        }
+
+    </style>
+</head>
+<body style=" background-repeat:no-repeat ;
+      background-size:100% 100%;
+      background-attachment:fixed;">
+
+<div id="train_list">
+    <h1 style="text-align: center">列车情况</h1>
+    <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
+        <tr>
+            <th width="200">列车名</th>
+            <th width="200">总车厢数</th>
+            <th width="200">总座位数</th>
+            <th width="200">途径路线</th>
+            <th width="200">列车操作</th>
+        </tr>
+        <tbody>
+        <tr th:each="item, stat: ${trains}">
+            <td th:text="${item.trainName}"></td>
+            <td th:text="${item.carriageNum}"></td>
+            <td th:text="${item.allPassengerNum}"></td>
+            <td th:text="${item.wayStation}"></td>
+            <td><a href="#" th:onclick="addSection([[${item.trainName}]],[[${item.trainId}]])">
+                添加车次</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" onclick="addTrain()" style="margin-left: 10px">添加列车</button>
+</div>
+
+<div id="section_list">
+    <h1 style="text-align: center">车次列表</h1>
+    <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
+        <tr>
+            <th width="200">列车名</th>
+            <th width="200">车次</th>
+            <th width="200">出发时间</th>
+            <th width="200">到达时间</th>
+            <th width="200">起点</th>
+            <th width="200">终点</th>
+            <th width="200">添加操作</th>
+        </tr>
+        <tbody>
+        <tr th:each="item, stat: ${sectionList}">
+            <td th:text="${item.trainName}"></td>
+            <td th:text="${item.section.sectionId}"></td>
+            <td th:text="${#dates.format(item.section.startTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${#dates.format(item.section.endTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${item.section.startSection}"></td>
+            <td th:text="${item.section.endSection}"></td>
+            <td><a href="#" th:onclick="addTicket([[${item.trainName}]], [[${item.section.sectionId}]],
+            [[${item.section.startSection}]], [[${item.section.endSection}]])">添加车票</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="ticket_list">
+    <h1 style="text-align: center">售票情况</h1>
+    <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
+        <tr>
+            <th width="200">列车名</th>
+            <th width="200">列车车次</th>
+            <th width="200">车次区间</th>
+            <th width="200">已售票</th>
+            <th width="200">退票数</th>
+        </tr>
+        <tbody>
+
+        <tr th:each="info, stat: ${infoList}">
+            <td th:text="${info.trainName}"></td>
+            <td th:text="${info.section.sectionId}"></td>
+            <td th:text="${info.section.startSection}+ '  至  ' + ${info.section.endSection}"></td>
+            <td th:text="${info.payNum}"></td>
+            <td th:text="${info.changeNum}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

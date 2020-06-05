@@ -30,4 +30,7 @@ public interface TrainSectionMapper {
                                                         @Param("endSection") String endSection, @Param("startTime") String startTime);
     TrainSection selectTrainSection(int sectionId);
 
+
+    List<TrainSection> selectAllSectionInfo(@Param("start") int start, @Param("end") int end);
+
 }

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>华农铁路</title>
+    <script src="/bootdemo/js/jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#train_list").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                $("#informationView").load("/bootdemo/train/list.do #train_list");
+            });
+            $("#section_list").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                $("#informationView").load("/bootdemo/section/list.do #section_list");
+            });
+
+            $("#ticket_list").click(function () {
+                $("#informationView").empty();
+                $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                $("#informationView").load("/bootdemo/ticket/list.do #ticket_list");
+            });
+        });
+
+    </script>
+    <script>
+        function aboutDisplay() {
+            let about = $("<div class=\"about_info\" style=\'margin: 8% 30%\'>\n    " +
+                "<p class=\"about_title\">SCAU TicketCondition 0.0.1-SNAPSHOT</p>\n    " +
+                "<p class=\"about_content\">Build #IntelliJ IDEA 2020.1.1 (Ultimate Edition)</p>\n    " +
+                "<p class=\"about_content\">Built on May 30, 2020</p>\n    " +
+                "<p class=\"about_title\">Author By ZJM CYJ ZYQ</p>\n    " +
+                "<p class=\"about_content\">SpringBoot 2.2.5.RELEASE MySQL 5.7.25 Redis 5.0.3 </p>\n    " +
+                "<p class=\"about_content\">For DataBase Course use only.</p>" +
+                "\n</div>\n");
+            $("#informationView").empty();
+            about.appendTo("#informationView");
+        }
+
+        function addTrain() {
+            $('#addTrain').slideDown('slow');
+            $('#screen').show();
+        }
+
+        function closer() {
+            $('#addTrain').fadeOut('slow');
+            $('#addSection').fadeOut('slow');
+            $('#addTicket').fadeOut('slow');
+            $('#screen').hide();
+        }
+
+
+        function addTrainFrom() {
+
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/train/add.do",
+                async: false,
+                data: $('#addTrainFrom').serialize(),
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        closer();
+                        $("#informationView").empty();
+                        $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                            "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                        $("#informationView").load("/bootdemo/train/list.do #train_list");
+                    }
+                }
+            });
+            $('#addTrainFrom')[0].reset();
+            return false;
+        }
+
+    </script>
+    <script th:inline="javascript">
+
+        function addSection(trainName, trainId) {
+            $('#train_name').html(trainName);
+            $('#trainId').val(trainId);
+            $('#addSection').slideDown('slow');
+            $('#screen').show();
+        }
+
+
+        function addSectionFrom() {
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/section/add.do",
+                async: false,
+                data: $('#addSectionFrom').serialize(),
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        closer();
+                        $("#informationView").empty();
+                        $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                            "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                        $("#informationView").load("/bootdemo/section/list.do #section_list");
+                    }
+                }
+            });
+            $('#addSectionFrom')[0].reset();
+            return false;
+        }
+
+
+        function addTicket(trainName, sectionId, startSection, endSection) {
+            $('#typeTrainName').html(trainName);
+            $('#sectionInfo').html(startSection + "  至  " + endSection);
+            $('#sectionId1').val(sectionId);
+            $('#sectionId2').val(sectionId);
+            $('#sectionId3').val(sectionId);
+            $('#addTicket').slideDown('slow');
+            $('#screen').show();
+        }
+
+        function addTicketFrom() {
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/type/add.do",
+                async: false,
+                data: $('#addTicketFrom').serialize(),
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        closer();
+                    }
+                }
+            });
+            $('#addTicketFrom')[0].reset();
+            return false;
+        }
+
+    </script>
+    <style>
+        .form {
+            width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            right: 50%;
+            margin-left: -200px;
+            margin-right: -100px;
+            z-index: 10004;
+            background: #fff;
+            padding: 10px;
+        }
+
+        #screen {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: #000;
+            opacity: .5;
+            display: none;
+            z-index: 10003;
+            top: 0px;
+            left: 0px;
+        }
+
+        body {
+            background-image: url("/bootdemo/img/back2.png");
+            background-size: 100% 100%;
+        }
+
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        .column.side {
+            width: 15%;
+
+        }
+
+        .column.middle {
+            position: relative;
+            margin-top: 1%;
+            border: 2px solid #b3acac;
+            width: 80%;
+            min-height: 400px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* 导航链接 */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* 链接 - 修改颜色 */
+        .topnav a:hover {
+            background-color: #ddd;
+        }
+
+        #informationView {
+            background-image: url("/bootdemo/img/beijing1.png");
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 头部 -->
+<div id="screen" onclick="closer()"></div>
+<div class="form" id="addTrain">
+    <h2 style="text-align: center">添加列车信息</h2>
+    <form id="addTrainFrom" action="/bootdemo/train/add.do"
+          enctype="multipart/form-data" method="post"
+          onsubmit="return addTrainFrom()">
+        <p><label>列车名：</label><input type="text" name="trainName"></p>
+        <p><label>车厢数：</label><input type="text" name="carriageNum"></p>
+        <p><label>座位数：</label><input type="text" name="allPassengerNum"></p>
+        <p><label>路线：</label><input type="text" name="wayStation"></p>
+        <p><input type="submit" value="添加"><input type="reset" value="重置"/></p>
+    </form>
+</div>
+<div class="form" id="addSection">
+    <h2 style="text-align: center">添加车次信息</h2>
+    <p><label>列车名：</label><span><label id="train_name"></label></span></p>
+    <form id="addSectionFrom" action="/bootdemo/train/add.do"
+          enctype="multipart/form-data" method="post"
+          onsubmit="return addSectionFrom()">
+    <input type="hidden" name="trainId" id="trainId">
+    <p><label>起点：</label><input type="text" name="startSection">
+        <label>终点：</label><input type="text" name="endSection"> </p>
+    <p><label>出发日期：</label><input type="text" name="startTime" placeholder="yyyy-MM-dd HH:mm:ss"/>
+    <p><label>到达日期：</label><input type="text" name="endTime" placeholder="yyyy-MM-dd HH:mm:ss"/>
+    <p><input type="submit" value="添加"><input type="reset" value="重置"/></p>
+    </form>
+</div>
+<div class="form" id="addTicket">
+    <h5><span>添加车票</span></h5>
+    <form id="addTicketFrom" action="/bootdemo/type/add.do"
+          enctype="multipart/form-data" method="post"
+          onsubmit="return addTicketFrom()">
+        <p><label>所属列车名:    </label><text id="typeTrainName"></text></p>
+        <p><label>列车的车次:    </label><text id="sectionInfo"></text></p>
+        <input type="hidden" name="types[0].sectionId" id="sectionId1">
+        <input type="hidden" name="types[0].seatGrade" value="一等座">
+        <p><label>一等车厢数:</label><input type="text" name="types[0].compartmentNum"></p>
+        <p><label>一等座数量:</label><input type="text" name="types[0].allSeatNum">
+            <label>一等座票价:</label><input type="text" name="types[0].price"></p>
+        <input type="hidden" name="types[1].sectionId" id="sectionId2">
+        <input type="hidden" name="types[1].seatGrade" value="二等座">
+        <p><label>二等车厢数:</label><input type="text" name="types[1].compartmentNum"></p>
+        <p><label>二等座数量:</label><input type="text" name="types[1].allSeatNum">
+            <label>二等座票价:</label><input type="text" name="types[1].price"></p>
+        <input type="hidden" name="types[2].sectionId" id="sectionId3">
+        <input type="hidden" name="types[2].seatGrade" value="三等座">
+        <p><label>三等车厢数:</label><input type="text" name="types[2].compartmentNum"></p>
+        <p><label>三等座数量:</label><input type="text" name="types[2].allSeatNum">
+            <label>三等座票价:</label><input type="text" name="types[2].price"></p>
+        <p><input type="submit" value="添加" class="sub"><input type="reset" value="重置" class="sub" onclick="f1()" /></p>
+    </form>
+</div>
+<div class="header" id="alling">
+    <div class="wrapper">
+        <!-- 头部内容 -->
+        <div class="header-con">
+            <h1 class="logo">华农铁路</h1>
+        </div>
+    </div>
+    <!--公共导航栏-->
+    <div class="topnav">
+        <a href="#" onclick="window.location.reload()">管理员中心</a>
+        <a href="/bootdemo/login/login.html">普通用户登录调试</a>
+        <a href="#" onclick="aboutDisplay()">关于我们</a>
+    </div>
+    <!--公共导航栏 end-->
+    <!-- 主体内容 -->
+    <div class="wrapper content">
+        <!-- 个人中心 -->
+
+        <div class="column side" id="menu">
+            <!-- 个人中心左侧 -->
+            <!-- 个人中心左侧菜单 -->
+            <ul class="center-menu">
+                <li class="menu-item">
+                    <h2 class="menu-tit">管理员中心<i class="icon icon-switch"></i></h2>
+                    <ul class="menu-sub">
+                        <li><a href="#" id="train_list">查看列车列表</a></li>
+                        <li><a href="#" id="section_list">查看车次列表</a></li>
+                        <li><a href="#" id="ticket_list">查看售票情况</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 个人中心右侧 -->
+        <div class="column middle" id="informationView">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+

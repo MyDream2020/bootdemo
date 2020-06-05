@@ -17,6 +17,7 @@ public interface OrdersMapper {
 
     Orders selectOrders(@Param("orderId") int orderId,@Param("cardId") String cardId);
 
+    int updateOrdersForChangeByOrdersId(@Param("orderId") int orderId);
 
     Integer selectTicketId(int orderId);
 
@@ -29,6 +30,10 @@ public interface OrdersMapper {
     int insertOrdersByList(@Param("ordersList") List<Orders> ordersList);
 
     int updateOrdersForTicketAndSellByList(@Param("ordersList")List<Orders> ordersList);
+
+    Integer selectIsPayNumBySectionId(@Param("sectionId") int sectionId);
+
+    Integer selectIsChangeNumBySectionId(@Param("sectionId") int sectionId);
 
     List<Orders> selectOrdersByUserIdIsPay(@Param("userId") int userId, @Param("isPay") byte isPay);
 

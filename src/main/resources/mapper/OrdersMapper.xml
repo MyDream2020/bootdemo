@@ -8,6 +8,14 @@
         </if>
     </select>
 
+    <select id="selectIsPayNumBySectionId" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM orders WHERE isPay = 1 AND sectionId = #{sectionId}
+    </select>
+
+    <select id="selectIsChangeNumBySectionId" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM orders WHERE isChange = 1 AND sectionId = #{sectionId}
+    </select>
+
     <select id="selectIsPayOrdersByUserId" resultType="com.bootdemo.domain.Orders">
         SELECT * FROM orders WHERE isPay = 1 AND userId = #{userId} ORDER BY orderId desc
     </select>

@@ -31,7 +31,7 @@
         SELECT typeId FROM ticket_type WHERE sectionId = #{sectionId} ORDER BY typeId
     </select>
 
-    <insert id="insertTrainTicketTypeByList">
+    <insert id="insertTrainTicketTypeByList" useGeneratedKeys="true" keyProperty="typeId">
         INSERT INTO ticket_type(sectionId,seatGrade,price,compartmentNum,allSeatNum) VALUES
         <foreach collection ="ticketTypeList" item="type"  index= "index"  separator="," >
             (#{type.sectionId},#{type.seatGrade},#{type.price},#{type.compartmentNum},#{type.allSeatNum})

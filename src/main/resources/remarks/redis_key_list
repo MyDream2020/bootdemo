@@ -3,4 +3,5 @@ typeId : TicketType(票种) <typeId10000,TicketType>
 userIdType : List<TypeId>(选中的票种ID) <userIdType2,List<Integer>>
 userIdOrders : List<Orders>(订单) <userIdOrders,List<Orders>>
 userIdTicket : List<Ticket>(订单) <userIdTicket,List<Ticket>>
-"userIdQuery"+user.getUserId() : List<DisplayOrders>
+"userIdQuery"user.getUserId() : List<DisplayOrders>
+"sectionId"sectionId : TrainType

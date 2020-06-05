@@ -28,6 +28,7 @@ public interface TicketMapper {
 
     int updateTicketForIsSellByList(@Param("ticketList") List<Ticket> ticketList, @Param("isSell") byte isSell);
 
-    int updateTypeSell(int ticketId);
+
+    int updateTicketChangeIsShell(@Param("ticketId")int ticketId, @Param("isSell") byte isSell);
 
 }

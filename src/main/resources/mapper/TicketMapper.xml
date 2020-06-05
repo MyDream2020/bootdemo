@@ -23,7 +23,7 @@
         VALUES (#{typeId},#{compartmentNum},#{seatingNum})
     </insert>
 
-    <insert id="insertTicketByList">
+    <insert id="insertTicketByList" >
         INSERT INTO ticket(typeId,compartmentNum,seatingNum)
         VALUES
         <foreach collection ="ticketList" item="ticket"  index= "index"  separator="," >
@@ -42,8 +42,8 @@
         </foreach>
     </update>
 
-    <update id="updateTypeSell">
-        UPDATE ticket SET isSell=1 WHERE ticketId = #{ticketId}
+    <update id="updateTicketChangeIsShell">
+        UPDATE ticket SET isSell= #{isSell} WHERE ticketId = #{ticketId}
     </update>
 
 </mapper>

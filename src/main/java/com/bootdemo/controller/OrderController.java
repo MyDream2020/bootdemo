@@ -162,7 +162,7 @@ public class OrderController {
                 }
                 return "    支付失败！余票不足！";
             }
-            ticketMapper.updateTypeSell(ticket.getTicketId());
+            ticketMapper.updateTicketChangeIsShell(ticket.getTicketId(),(byte) 1);
             ticketList.add(ticket);
         }
         for (int i = 0; i < ordersList.size(); i++) {
@@ -170,7 +170,6 @@ public class OrderController {
             orders.setIsPay((byte) 1);
             orders.setTicketId(ticketList.get(i).getTicketId());
         }
-        //TODO ticketType余量表要更新 redis同理
         ordersMapper.updateOrdersForTicketAndSellByList(ordersList);
         redisUtil.set("userIdOrders" + userId, ordersList, 15);
         redisUtil.set("userTicket" + userId, ticketList, 15);
@@ -181,4 +180,15 @@ public class OrderController {
         }
         return "    购买成功";
     }
+
+    @RequestMapping("/orders/change.do")
+    @ResponseBody
+    private String doChange(int ordersId, int typeId, int ticketId, int userId){
+        ordersMapper.updateOrdersForChangeByOrdersId(ordersId);
+        redisUtil.incr("typeNum" + typeId);
+        ticketMapper.updateTicketChangeIsShell(ticketId, (byte) 0);
+        redisUtil.del("userIdQuery" + userId);
+        return "    退票成功";
+    }
+
 }

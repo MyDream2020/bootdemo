@@ -4,13 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        body {
+             background: url("./img/background.png");
+        }
+
+    </style>
 </head>
-<body>
+<body style=" background-repeat:no-repeat ;
+      background-size:100% 100%;
+      background-attachment:fixed;">
 
     <div id="orders_list">
         <table  id="order_table" style="margin: auto auto; text-align: center;
         border-spacing:20px; border: 1px; font-family: 宋体, serif; font-weight: bold">
-            <thead>
+            <thead class="box">
             <th>乘客信息</th>
             <th>出发时间</th>
             <th>席&nbsp别</th>
@@ -39,7 +48,10 @@
                 [[${item.section.sectionId}]], [[${item.section.startSection}]], [[${item.section.endSection}]],
                 [[${item.price}]], [[${item.orders.userName}]], [[${item.orders.cardId}]])">车票</a> </td>
                 <td th:text="${item.orders.isChange} == 0?'已成功购买':'已完成退票'"></td>
-                <td><a th:if="${item.orders.isChange} == 0" href="#" th:onclick="refundTicket([[${item.ticket.ticketId}]])">退票</a></td>
+                <td><a th:if="${item.orders.isChange} == 0" href="#" th:onclick="refundTicket(
+                [[${item.ticket.ticketId}]], [[${item.ticket.typeId}]], [[${item.orders.orderId}]],
+                [[${item.price}]], [[${#dates.format(item.section.startTime,'yyyy-MM-dd')}]],
+                [[${#dates.format(item.section.endTime,'yyyy-MM-dd')}]])">退票</a></td>
             </tr>
             </tbody>
         </table>

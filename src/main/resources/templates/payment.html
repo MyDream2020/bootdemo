@@ -9,7 +9,7 @@
         .orders_display {
             margin: 100px auto 10px;
             width: 720px;
-            background-color: cornsilk;
+            background-color: #F5F5F5;
         }
         .section_display label{
             font-family: "Microsoft YaHei",serif;
@@ -26,9 +26,15 @@
             text-align: center;
             border-spacing: 10px;
         }
+        body {
+             background-image: url("/bootdemo/img/mainback.png");
+             background-size: 100% 100%;
+        }
     </style>
 </head>
-<body >
+<body style=" background-repeat:no-repeat ;
+      background-size:100% 100%;
+      background-attachment:fixed;">
 <div class="orders_display" >
     <div class="section_display">
         <p th:text="'亲爱的'+ ${#httpSession.getAttribute('user').getUserName()} +'，您好！您的订单信息为：'"></p>

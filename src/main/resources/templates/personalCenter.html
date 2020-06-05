@@ -3,9 +3,94 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>华农铁路</title>
     <script src="/bootdemo/js/jquery.js"></script>
+    <style type="text/css">
+
+        #click {
+            line-height: 35px;
+            width: 80px;
+            height: 35px;
+            background: #369;
+            margin: 20% auto;
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .form {
+            width: 480px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            right: 50%;
+            margin-left: -200px;
+            margin-right: -100px;
+            z-index: 10004;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .form h2 {
+            height: 35px;
+            width: 80%;
+            margin: 0 auto;
+            color: white;
+            background: #369;
+            line-height: 35px;
+            text-align: center;
+        }
+
+        .form span {
+            width: 200px;
+            display: block;
+            line-height: 35px;
+            margin: 10px auto;
+        }
+
+        label {
+
+            margin: 10px 0 10px 0;
+            padding: 0 10px 0 10px
+        }
+
+        #refund_cancel {
+            width: 30%;
+            height: 35px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 0 15px 0 10px;
+            outline: none
+        }
+
+        #refund_submit {
+            width: 30%;
+            height: 35px;
+            outline: none;
+            margin: 0 12%;
+            background: #369;
+            color: white;
+        }
+
+        #screen {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: #000;
+            opacity: .5;
+            display: none;
+            z-index: 10003;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
     <script>
         $(document).ready(function () {
             $("#orders_history").click(function () {
@@ -32,10 +117,9 @@
             $("#no_pay_history").click(function () {
                 $("#informationView").empty();
                 $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
-                    "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                    "/>").appendTo("#informationView");
                 $("#informationView").load("/bootdemo/query/personal.do #no_pay_orders", {"content": "noPay"});
             });
-
         });
     </script>
     <script th:inline="javascript">
@@ -55,8 +139,43 @@
             $("#backGround").show();
         }
 
-        function refundTicket(ticketId){
-            alert(ticketId);
+        function refund_send(ticketId, typeId, ordersId) {
+            let userId = [[${user.userId}]];
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/orders/change.do",
+                async: false,
+                data: "ordersId=" + ordersId + "&typeId=" + typeId
+                    + "&ticketId=" + ticketId + "&userId=" + userId,
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        closer();
+                        $("#informationView").empty();
+                        $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                            "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                        $("#informationView").load("/bootdemo/query/personal.do #orders_list", {"content": "orders"});
+                    }
+                }
+            });
+        }
+
+        function refundTicket(ticketId, typeId, ordersId, price, startTime, endTime) {
+
+            $("#refund_date").html("出发日期：" + startTime);
+            $("#refund_price").html("车票价格：" + price);
+            $("#refund_sum").html("共计退款：" + (price - 2));
+            $("#refund_submit").bind('click', function () {
+                refund_send(ticketId, typeId, ordersId);
+            });
+            $('#refund').slideDown('slow');
+            $('#screen').show();
+        }
+
+
+        function closer() {
+            $('#refund').fadeOut('slow');
+            $('#screen').hide();
         }
 
         $(document).ready(function () {
@@ -83,6 +202,11 @@
     </script>
 </head>
 <style>
+    body {
+        background-image: url("/bootdemo/img/back2.png");
+        background-size: 100% 100%;
+    }
+
     .column {
         float: left;
         padding: 10px;
@@ -119,11 +243,8 @@
     /* 链接 - 修改颜色 */
     .topnav a:hover {
         background-color: #ddd;
-
     }
 
-</style>
-<style>
     .about_info {
         position: absolute;
         margin: 10% 25%;
@@ -134,9 +255,6 @@
         font-weight: bolder;
     }
 
-    #orders_info {
-
-    }
 </style>
 <style type="text/css">
     #choiceWindow {
@@ -170,18 +288,37 @@
         filter: alpha(opacity=88);
     }
 
+    #informationView {
+        background-image: url("/bootdemo/img/beijing1.png");
+        background-size: 100% 100%;
+    }
+
     #x:hover {
         cursor: pointer;
         color: rgb(55, 198, 192);
     }
+
 </style>
 <body>
+<div id="screen" onclick="closer()"></div>
+<div class="form" id="refund">
+    <div>
+        <h2 style="text-align: center">您确认退票吗？</h2>
+        <span><label id="refund_date"></label></span>
+        <span><label id="refund_price"></label></span>
+        <span><label id="refund_off">手续费用：2元</label></span>
+        <span><label id="refund_sum"></label></span>
+        <button type="button" id="refund_submit">确认</button>
+        <button type="button" id="refund_cancel" onclick="closer()">取消</button>
+    </div>
+</div>
 <div>
     <div id="choiceWindow">
         <label id="x" style="position: absolute;top:2px;left: 95%;font-size: 25px;">x</label>
         <br>
         <div style="font-size: 45px; margin-left: 20%">
-            <label style="margin: 12%;  font-family: 'Times New Roman',serif;font-size: 20px">SCAUDB Ticket Condition</label>
+            <label style="margin: 12%;  font-family: 'Times New Roman',serif;font-size: 20px">SCAUDB Ticket
+                Condition</label>
             <br>
             <label id="ticket_info_startStation" style="margin-top: 25%"></label>
             &nbsp;&nbsp;
@@ -213,7 +350,7 @@
     <div id="backGround"></div>
 </div>
 <!-- 头部 -->
-<div class="header">
+<div class="header" id="alling">
     <div class="wrapper">
         <!-- 头部内容 -->
         <div class="header-con">
