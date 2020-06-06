@@ -14,12 +14,14 @@ public class SectionTicketInfo {
     private int payNum;
     private int changeNum;
     private String trainName;
+    private int allNum;
 
-    public SectionTicketInfo(TrainSection section, int payNum, int changeNum, String trainName) {
+    public SectionTicketInfo(TrainSection section, int payNum, int changeNum, String trainName, int allNum) {
         this.section = section;
         this.payNum = payNum;
         this.changeNum = changeNum;
         this.trainName = trainName;
+        this.allNum = allNum;
     }
 
     public SectionTicketInfo() {
@@ -57,6 +59,14 @@ public class SectionTicketInfo {
         this.trainName = trainName;
     }
 
+    public int getAllNum() {
+        return allNum;
+    }
+
+    public void setAllNum(int allNum) {
+        this.allNum = allNum;
+    }
+
     @Override
     public String toString() {
         return "SectionTicketInfo{" +
@@ -64,6 +74,7 @@ public class SectionTicketInfo {
                 ", payNum=" + payNum +
                 ", changeNum=" + changeNum +
                 ", trainName='" + trainName + '\'' +
+                ", allNum=" + allNum +
                 '}';
     }
 }

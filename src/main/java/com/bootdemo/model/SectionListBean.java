@@ -10,10 +10,12 @@ import com.bootdemo.domain.TrainSection;
 public class SectionListBean {
     private TrainSection section;
     private String trainName;
+    private Integer replace;
 
-    public SectionListBean(TrainSection section, String trainName) {
+    public SectionListBean(TrainSection section, String trainName, Integer replace) {
         this.section = section;
         this.trainName = trainName;
+        this.replace = replace;
     }
 
     public TrainSection getSection() {
@@ -32,11 +34,20 @@ public class SectionListBean {
         this.trainName = trainName;
     }
 
+    public Integer getReplace() {
+        return replace;
+    }
+
+    public void setReplace(Integer replace) {
+        this.replace = replace;
+    }
+
     @Override
     public String toString() {
         return "SectionListBean{" +
                 "section=" + section +
                 ", trainName='" + trainName + '\'' +
+                ", replace=" + replace +
                 '}';
     }
 }

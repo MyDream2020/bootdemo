@@ -143,6 +143,42 @@
             return false;
         }
 
+        function delTrain(trainId) {
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/train/del.do",
+                async: false,
+                data: "trainId="+trainId,
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        $("#informationView").empty();
+                        $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                            "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                        $("#informationView").load("/bootdemo/train/list.do #train_list");
+                    }
+                }
+            });
+        }
+
+        function delSection(sectionId) {
+            $.ajax({
+                type: "POST",
+                url: "/bootdemo/section/del.do",
+                async: false,
+                data: "sectionId="+sectionId,
+                success: function (msg) {
+                    if (msg) {//根据返回值进行跳转
+                        alert(msg);
+                        $("#informationView").empty();
+                        $("<img style=' width 350px;height: 350px; margin: 0% 25%;'" +
+                            "src='/bootdemo/img/loading.jpeg.gif'/>").appendTo("#informationView");
+                        $("#informationView").load("/bootdemo/section/list.do #section_list");
+                    }
+                }
+            });
+        }
+
     </script>
     <style>
         .form {
@@ -151,7 +187,7 @@
             border-radius: 5px;
             display: none;
             position: fixed;
-            top: 20%;
+            top: 15%;
             left: 50%;
             right: 50%;
             margin-left: -200px;
@@ -262,18 +298,18 @@
         <input type="hidden" name="types[0].sectionId" id="sectionId1">
         <input type="hidden" name="types[0].seatGrade" value="一等座">
         <p><label>一等车厢数:</label><input type="text" name="types[0].compartmentNum"></p>
-        <p><label>一等座数量:</label><input type="text" name="types[0].allSeatNum">
-            <label>一等座票价:</label><input type="text" name="types[0].price"></p>
+        <p><label>一等座数量:</label><input type="text" name="types[0].allSeatNum"></p>
+        <p><label>一等座票价:</label><input type="text" name="types[0].price"></p>
         <input type="hidden" name="types[1].sectionId" id="sectionId2">
         <input type="hidden" name="types[1].seatGrade" value="二等座">
         <p><label>二等车厢数:</label><input type="text" name="types[1].compartmentNum"></p>
-        <p><label>二等座数量:</label><input type="text" name="types[1].allSeatNum">
-            <label>二等座票价:</label><input type="text" name="types[1].price"></p>
+        <p><label>二等座数量:</label><input type="text" name="types[1].allSeatNum"></p>
+        <p><label>二等座票价:</label><input type="text" name="types[1].price"></p>
         <input type="hidden" name="types[2].sectionId" id="sectionId3">
         <input type="hidden" name="types[2].seatGrade" value="三等座">
         <p><label>三等车厢数:</label><input type="text" name="types[2].compartmentNum"></p>
-        <p><label>三等座数量:</label><input type="text" name="types[2].allSeatNum">
-            <label>三等座票价:</label><input type="text" name="types[2].price"></p>
+        <p><label>三等座数量:</label><input type="text" name="types[2].allSeatNum"></p>
+        <p><label>三等座票价:</label><input type="text" name="types[2].price"></p>
         <p><input type="submit" value="添加" class="sub"><input type="reset" value="重置" class="sub" onclick="f1()" /></p>
     </form>
 </div>

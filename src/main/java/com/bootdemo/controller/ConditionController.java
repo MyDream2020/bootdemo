@@ -13,11 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -60,6 +58,13 @@ public class ConditionController {
     }
 
     @ResponseBody
+    @RequestMapping("/train/del.do")
+    public String doDelTrain(Integer trainId){
+        trainTypeMapper.deleteTrain(trainId);
+        return "        删除成功";
+    }
+
+    @ResponseBody
     @RequestMapping("/train/add.do")
     public String doAddTrain(TrainType train){
         trainTypeMapper.insertTrainType(train);
@@ -72,7 +77,9 @@ public class ConditionController {
         List<TrainSection> sections = sectionMapper.selectAllSectionInfo(0,100);
         for (TrainSection section : sections) {
             String trainName =trainTypeMapper.selectName(section.getTrainId());
-            sectionList.add(new SectionListBean(section, trainName));
+            List<Integer> result = typeMapper.selectTypeIdListBySectionId(section.getSectionId());
+            int replace =  result.size() > 0 ? 1 : 0;
+            sectionList.add(new SectionListBean(section, trainName, replace));
         }
         sectionList.sort(Comparator.comparing(SectionListBean::getTrainName));
         model.addAttribute("sectionList", sectionList);
@@ -84,6 +91,20 @@ public class ConditionController {
     public String doAddSection(TrainSection section){
         sectionMapper.insertTrainSection(section);
         return "        添加成功";
+    }
+
+    @ResponseBody
+    @RequestMapping("/section/del.do")
+    public String doDelSection(Integer sectionId){
+        sectionMapper.deleteSection(sectionId);
+        return "        删除成功";
+    }
+
+    @ResponseBody
+    @RequestMapping("/type/del.do")
+    public String doDelType(Integer typeId){
+        typeMapper.deleteType(typeId);
+        return "        删除成功";
     }
 
     @ResponseBody
@@ -127,7 +148,19 @@ public class ConditionController {
             int payNum = ordersMapper.selectIsPayNumBySectionId(id);
             int changeNum = ordersMapper.selectIsChangeNumBySectionId(id);
             String trainName = trainType.getTrainName();
-            infoList.add(new SectionTicketInfo(section, payNum,changeNum,trainName));
+            int allNum = 0;
+            List<Integer> typeIds = typeMapper.selectTypeIdListBySectionId(section.getSectionId());
+            for (Integer typeId : typeIds) {
+                Integer typeNum = (Integer) redisUtil.get("typeNum" + typeId);
+                if (typeNum == null){
+                    typeNum = typeMapper.selectSeatNumber(typeId);
+                    redisUtil.set("typeNum"+typeId, typeNum, 10);
+                }
+                allNum += typeNum;
+            }
+            payNum-=changeNum;
+            allNum += payNum;
+            infoList.add(new SectionTicketInfo(section, payNum,changeNum,trainName,allNum));
         }
         infoList.sort(Comparator.comparing(SectionTicketInfo::getTrainName));
         model.addAttribute("infoList", infoList);

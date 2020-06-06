@@ -6,6 +6,10 @@
         select * from user where phoneNumber = #{phoneNumber}
     </select>
 
+    <select id="selectCountByPhoneNumber" resultType="java.lang.Integer">
+        select COUNT(*) from user where phoneNumber = #{phoneNumber}
+    </select>
+
     <select id="selectUser" resultType="com.bootdemo.domain.User">
         select * from user where userId = #{userId}
     </select>

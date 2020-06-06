@@ -26,5 +26,6 @@ public interface TrainTypeMapper {
 
     List<Integer> selectTicketIsShellByTrainId(@Param("trainId") int trainId);
 
+    Integer deleteTrain(@Param("trainId") int trainId);
 
 }

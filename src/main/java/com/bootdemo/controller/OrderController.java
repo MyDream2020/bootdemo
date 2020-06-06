@@ -6,6 +6,7 @@ import com.bootdemo.dao.TicketTypeMapper;
 import com.bootdemo.dao.TrainTypeMapper;
 import com.bootdemo.domain.*;
 import com.bootdemo.model.Passenger;
+import com.bootdemo.model.ResultBean;
 import com.bootdemo.model.TemporaryOrders;
 import com.bootdemo.model.TicketInfoBean;
 import com.bootdemo.util.RedisUtil;
@@ -54,16 +55,20 @@ public class OrderController {
         List<TrainSection> results = (List<TrainSection>) session.getAttribute("queryList");
         TrainSection section = null;
         User user = (User) session.getAttribute("user");
-        for (TrainSection result : results) {
-            if (result.getSectionId() == sectionId){
-                section = result;
-                break;
+        if (results != null){
+            for (TrainSection result : results) {
+                if (result.getSectionId() == sectionId){
+                    section = result;
+                    break;
+                }
             }
         }
 
         //TODO 设置一个专门的error页面
         if (section == null || user == null){
-            model.addAttribute("error", "尚未登录");
+            ResultBean resultBean = new ResultBean(3);
+            resultBean.setBody("尚未登录或登录过期");
+            model.addAttribute("error", resultBean);
             return "loginError";
         }
         String way = trainTypeMapper.selectTrainWay(section.getTrainId());
@@ -77,7 +82,7 @@ public class OrderController {
         infoBean.setTicketTypes(ticketTypes);
         model.addAttribute("info", infoBean);
         session.setAttribute("section", section);
-        return "/makeOrders";
+        return "makeOrders";
     }
 
 
@@ -108,7 +113,7 @@ public class OrderController {
         TrainSection section = (TrainSection) session.getAttribute("section");
         model.addAttribute("section", section);
         model.addAttribute("passengers", temporaryorders.getPassengers());
-        return "/payment";
+        return "payment";
     }
 
     private BigDecimal totalCalculationAndStoredOrders(TemporaryOrders temporaryorders) {
@@ -186,6 +191,7 @@ public class OrderController {
     private String doChange(int ordersId, int typeId, int ticketId, int userId){
         ordersMapper.updateOrdersForChangeByOrdersId(ordersId);
         redisUtil.incr("typeNum" + typeId);
+        ticketTypeMapper.updateTypeForChange(typeId);
         ticketMapper.updateTicketChangeIsShell(ticketId, (byte) 0);
         redisUtil.del("userIdQuery" + userId);
         return "    退票成功";

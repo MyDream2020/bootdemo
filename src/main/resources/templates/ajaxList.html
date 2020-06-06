@@ -20,11 +20,12 @@
     <h1 style="text-align: center">列车情况</h1>
     <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
         <tr>
-            <th width="200">列车名</th>
-            <th width="200">总车厢数</th>
-            <th width="200">总座位数</th>
-            <th width="200">途径路线</th>
-            <th width="200">列车操作</th>
+            <th width="150">列车名</th>
+            <th width="150">总车厢数</th>
+            <th width="150">总座位数</th>
+            <th width="250">途径路线</th>
+            <th width="150">增加车次</th>
+            <th width="150">删除列车</th>
         </tr>
         <tbody>
         <tr th:each="item, stat: ${trains}">
@@ -33,7 +34,9 @@
             <td th:text="${item.allPassengerNum}"></td>
             <td th:text="${item.wayStation}"></td>
             <td><a href="#" th:onclick="addSection([[${item.trainName}]],[[${item.trainId}]])">
-                添加车次</a></td>
+                添加</a></td>
+            <td><a href="#" th:onclick="delTrain([[${item.trainId}]])">
+                删除</a></td>
         </tr>
         </tbody>
     </table>
@@ -45,13 +48,14 @@
     <h1 style="text-align: center">车次列表</h1>
     <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
         <tr>
-            <th width="200">列车名</th>
-            <th width="200">车次</th>
-            <th width="200">出发时间</th>
-            <th width="200">到达时间</th>
-            <th width="200">起点</th>
-            <th width="200">终点</th>
-            <th width="200">添加操作</th>
+            <th width="150">列车名</th>
+            <th width="150">车次</th>
+            <th width="150">出发时间</th>
+            <th width="150">到达时间</th>
+            <th width="150">起点</th>
+            <th width="150">终点</th>
+            <th width="150">添加车票</th>
+            <th width="150">删除车次</th>
         </tr>
         <tbody>
         <tr th:each="item, stat: ${sectionList}">
@@ -61,8 +65,9 @@
             <td th:text="${#dates.format(item.section.endTime,'yyyy-MM-dd HH:mm:ss')}"></td>
             <td th:text="${item.section.startSection}"></td>
             <td th:text="${item.section.endSection}"></td>
-            <td><a href="#" th:onclick="addTicket([[${item.trainName}]], [[${item.section.sectionId}]],
-            [[${item.section.startSection}]], [[${item.section.endSection}]])">添加车票</a></td>
+            <td><a href="#" th:if="${item.replace} == 0" th:onclick="addTicket([[${item.trainName}]], [[${item.section.sectionId}]],
+            [[${item.section.startSection}]], [[${item.section.endSection}]])">添加</a></td>
+            <td><a href="#" th:onclick="delSection([[${item.section.sectionId}]])">删除</a></td>
         </tr>
         </tbody>
     </table>
@@ -70,12 +75,12 @@
 
 <div id="ticket_list">
     <h1 style="text-align: center">售票情况</h1>
-    <table border="1" cellspacing="0" style="text-align: center; margin-left: 10px">
+    <table border="1" cellspacing="0" style="text-align: center; margin-left: 20px">
         <tr>
             <th width="200">列车名</th>
             <th width="200">列车车次</th>
             <th width="200">车次区间</th>
-            <th width="200">已售票</th>
+            <th width="200">已售/总票</th>
             <th width="200">退票数</th>
         </tr>
         <tbody>
@@ -84,7 +89,7 @@
             <td th:text="${info.trainName}"></td>
             <td th:text="${info.section.sectionId}"></td>
             <td th:text="${info.section.startSection}+ '  至  ' + ${info.section.endSection}"></td>
-            <td th:text="${info.payNum}"></td>
+            <td th:text="${info.payNum} + ' / ' + ${info.allNum}"></td>
             <td th:text="${info.changeNum}"></td>
         </tr>
         </tbody>

@@ -33,4 +33,8 @@ public interface TicketTypeMapper {
     int updateTypeForDecrByList (@Param("typeIdList") List<Integer> typeIdList);
 
     String selectSeatGrade(int typeId);
+
+    Integer deleteType(@Param("typeId") int typeId);
+
+    Integer updateTypeForChange(@Param("typeId") int typeId);
 }

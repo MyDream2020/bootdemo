@@ -49,4 +49,12 @@
         </foreach>
     </update>
 
+    <delete id="deleteType" parameterType="java.lang.Integer">
+        DELETE FROM ticket_type WHERE typeId = #{typeId}
+    </delete>
+
+    <update id="updateTypeForChange" parameterType="java.lang.Integer">
+        UPDATE ticket_type SET allSeatNum=allSeatNum+1 WHERE typeId = #{typeId}
+    </update>
+
 </mapper>

@@ -26,4 +26,8 @@
     <select id="selectAllSectionInfo" resultType="com.bootdemo.domain.TrainSection">
         SELECT * FROM train_section LIMIT #{start},#{end};
     </select>
+
+    <delete id="deleteSection" parameterType="java.lang.Integer">
+        DELETE FROM train_section WHERE sectionId = #{sectionId}
+    </delete>
 </mapper>

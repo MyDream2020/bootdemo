@@ -64,7 +64,8 @@
     </div>
     <div class="other">
         <span style="margin: 0 2%" th:text="'总金额：' + ${price}"></span>
-        <button type="button" id="btnSubmit" class="button button-submit">提交</button>
+        <button type="button" id="btnSubmit" class="button button-submit">立即支付</button>
+        <button type="button" id="btnCancel" class="button button-submit">取消支付</button>
     </div>
 </div>
 <script th:inline="javascript">
@@ -93,6 +94,10 @@
                     }
                 }
             });
+        });
+
+        $("#btnCancel").click(function () {
+            window.location.href="/bootdemo/redirect/personalCenter";
         });
     });
 </script>

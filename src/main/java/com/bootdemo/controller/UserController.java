@@ -61,7 +61,7 @@ public class UserController {
             resultBean.setBody("密码错误");
         }
         model.addAttribute("error", resultBean);
-        return "/loginError";
+        return "loginError";
     }
 
     @RequestMapping(value = "/remoteVerification", method = RequestMethod.POST)
@@ -81,7 +81,14 @@ public class UserController {
 
 
     @RequestMapping("/register/register.do")
-    public String register(User user) {
+    public String register(User user, Model model) {
+        Integer result = userService.selectCountByPhoneNumber(user.getPhoneNumber());
+        if (result != null && result> 0){
+            ResultBean resultBean = new ResultBean(2);
+            resultBean.setBody("该手机号已注册");
+            model.addAttribute("error", resultBean);
+            return "loginError";
+        }
         userService.insertUser(user);
         return "redirect:/login/login.html";
     }

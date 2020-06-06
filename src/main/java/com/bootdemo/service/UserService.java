@@ -28,8 +28,8 @@ public class UserService {
         return userMapper.selectUserByPhoneNumber(phoneNumber);
     }
 
-    public Integer selectIdByPhoneNumber(String phoneNumber){
-        return userMapper.selectIdByPhoneNumber(phoneNumber);
+    public Integer selectCountByPhoneNumber(String phoneNumber){
+        return userMapper.selectCountByPhoneNumber(phoneNumber);
     }
     
     public int insertUser(User user) {

@@ -33,4 +33,5 @@ public interface TrainSectionMapper {
 
     List<TrainSection> selectAllSectionInfo(@Param("start") int start, @Param("end") int end);
 
+    Integer deleteSection(@Param("sectionId") int sectionId);
 }

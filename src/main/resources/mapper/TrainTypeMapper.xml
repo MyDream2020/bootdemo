@@ -23,5 +23,9 @@
         SELECT trainName FROM train_type WHERE trainId = #{trainId}
     </select>
 
+    <delete id="deleteTrain" parameterType="java.lang.Integer">
+        DELETE FROM train_type WHERE trainId = #{trainId}
+    </delete>
+
 
 </mapper>
